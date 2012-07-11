@@ -2,11 +2,7 @@
 <html>
 {% include head.html %}
 <body>
-
   <div id="page">
-
-   <!-- Twitter Bootstrap navbar -->
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -15,7 +11,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-
           <a class="brand" href="/">mergulhao.info</a>
           <div class="nav-collapse">
             <ul class="nav">
@@ -24,25 +19,22 @@
               <li><a href="/contato">Contato</a></li>
             </ul>
           </div>
+          <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+            <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+            <input type="hidden" name="cof" value="FORID:0" />
+            <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+          </form>
         </div>
       </div>
     </div>
-
-    <!-- Main content area -->
-
     <div class="container main-content-container">
       <div class="row">
-        <div class="span2">
-          <img id="logo" src="/images/logo.png">
-        </div>
-
-        <div class="span10 main-content">
+        <div class="span12 main-content">
+          <br/><br/><br/>
           {{ content }}
         </div>
       </div>
     </div>
-
   </div>
-
 </body>
 </html>
