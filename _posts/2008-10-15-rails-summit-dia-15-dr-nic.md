@@ -1,17 +1,15 @@
---- 
+---
 layout: post
 title: 'Rails Summit dia 15: Dr Nic'
 disqus_id: /2008/10/15/rails-summit-dia-15-dr-nic
-categories: 
+categories:
   []
 tags:
   - rails
   - eventos
   - railssummit
+image: http://mergulhao.info/assets/2008/10/15/img_0999.jpg
 ---
-
-
-![Eu, Dr Nic e Jason](http://mergulhao.info/assets/2008/10/15/img_0999.jpg)
 
 Nosso doctor da comunidade contou como ele começou no Rails, em como foi chato ver pela primeira vez o tutorial de Rails de 15 minutos e como ele largou o Visual Studio e mudou para Rails.
 
