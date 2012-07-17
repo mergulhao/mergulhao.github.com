@@ -16,12 +16,12 @@ Uma conta num sistema contábil é um número, que possui uma semantica associad
 
 Simples exemplo de árvore contábil:
 
-  * 1 0 00 00 00 - Primeiro nível
-  * 1 1 00 00 00 - Segundo nível
-  * 1 1 01 00 00 - Terceiro nível
-  * 1 1 01 01 00 - Quarto nível
-  * 1 1 01 01 01 - Quinto nível
-  * 1 1 01 01 02 - Quinto nível
+ * 1 0 00 00 00 - Primeiro nível
+ * 1 1 00 00 00 - Segundo nível
+ * 1 1 01 00 00 - Terceiro nível
+ * 1 1 01 01 00 - Quarto nível
+ * 1 1 01 01 01 - Quinto nível
+ * 1 1 01 01 02 - Quinto nível
 
 O problema se desenvolveu pelo fato de estarmos utilizando uma [chave natural][cn] e uma estrutura com simulação de árvore através da [chave natural][cn]. Para encontrarmos o pai ou os filhos de uma conta era necessário realizarmos buscas no banco utilizando coisas como "like '1101%'", por exemplo, o que fazia os índices não terem efeito algum. Em algumas situações geramos relatórios consolidados buscando dados dos últimos 12 meses, o que gerava (sem exagero) milhares de queries no banco e cálculos absurdos.
 
@@ -130,6 +130,3 @@ Os arquivos desse artigo podem ser baixados aqui:
 [nestedset]: http://api.rubyonrails.org/classes/ActiveRecord/Acts/NestedSet/ClassMethods.html
 [acts_as_tree]: http://wiki.rubyonrails.org/rails/pages/ActsAsTree
 [betternestedset]: http://opensource.symetrie.com/trac/better_nested_set/
-
-
-
