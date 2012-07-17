@@ -1,16 +1,15 @@
---- 
+---
 layout: post
 title: 'Curso de administração Linux e deploy de Apps Rails'
 disqus_id: /2010/2/24/curso-de-administracao-linux-e-deploy-de-apps-rails
-categories: 
+categories:
   []
 tags:
   - rails
   - curso
 ---
 
-
-<img src="http://mergulhao.info/assets/2010/2/24/egenial.jpg" alt="logo e-genial" class="float-left" />
+<ul class="thumbnails pull-left"><li class="span3"><a href="http://mergulhao.info/assets/2010/2/24/egenial.jpg" class="thumbnail"><img src="http://mergulhao.info/assets/2010/2/24/egenial.jpg" alt=""></a></li></ul>
 
 Hoje eu e o Carlos Eduardo da [e-Genial](http://www.egenialsas.com.br/) fechamos os últimos detalhes de um novo curso: [Imersão Sys Deploy][imersao]! Os alunos vão aprender tudo sobre como configurar adequadamente um VPS para rodar aplicações Rails usando Apache com Passenger, Mysql e deploy com Capistrano.
 
@@ -23,4 +22,3 @@ Para saber mais detalhes acesse já o [site do curso][imersao] e faça a sua [in
 [imersao]: http://www.egenial.com.br/imersaosysdeploy
 [matricula]: http://www.egenial.com.br/imersaosysdeploy/matricula
 [tom]: http://www.egenialsas.com.br/site/treinatom
-
