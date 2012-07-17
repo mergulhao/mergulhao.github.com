@@ -7,9 +7,8 @@ categories:
 tags:
   - rails
   - curso
+image: http://mergulhao.info/assets/2010/2/24/egenial.jpg
 ---
-
-<ul class="thumbnails pull-left"><li class="span3"><a href="http://mergulhao.info/assets/2010/2/24/egenial.jpg" class="thumbnail"><img src="http://mergulhao.info/assets/2010/2/24/egenial.jpg" alt=""></a></li></ul>
 
 Hoje eu e o Carlos Eduardo da [e-Genial](http://www.egenialsas.com.br/) fechamos os últimos detalhes de um novo curso: [Imersão Sys Deploy][imersao]! Os alunos vão aprender tudo sobre como configurar adequadamente um VPS para rodar aplicações Rails usando Apache com Passenger, Mysql e deploy com Capistrano.
 
