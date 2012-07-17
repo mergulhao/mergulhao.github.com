@@ -9,6 +9,16 @@ layout: default
   </h1>
 </div>
 
+{% if page.image %}
+<ul class="thumbnails pull-left">
+  <li class="span3">
+    <a href="{{ page.image }}" class="thumbnail">
+      <img src="{{ page.image }}" alt="{{ page.title }}">
+    </a>
+  </li>
+</ul>
+{% endif %}
+
 {{ content }}
 
 {% if page.tags.size > 0 %}
