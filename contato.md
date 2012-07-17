@@ -1,13 +1,8 @@
 --- 
-layout: post
+layout: default
 title: 'Contato'
-disqus_id: /2007/4/26/contato
-categories: 
-  []
-tags:
-  []
+permalink: "/contato/index.html"
 ---
-
 
 E-mail
 ---------
@@ -28,4 +23,3 @@ Outras formas de contato
 --------------------------------------
 
 Se desejar contato por telefone ou pessoalmente, por favor entre em contato primeiramente por algum dos meios acima.
-
