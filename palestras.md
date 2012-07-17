@@ -1,13 +1,8 @@
 --- 
-layout: post
-title: 'Artigos'
-disqus_id: /2007/5/5/artigos
-categories: 
-  - artigos
-tags:
-  - artigos
+layout: default
+title: 'Artigos e palestras'
+permalink: "/artigos/index.html"
 ---
-
 
 Coloco a disposição aqui alguns dos artigos -- acadêmicos ou não -- que elaborei ou que participei da elaboração.
 
@@ -146,5 +141,3 @@ Palestra que apresenta o caso de sucesso da UNIRIO com a implantação do LTSP e
 
 [Download][ourinhos]
 [ourinhos]: http://mergulhao.info/assets/2007/5/5/palestra_ourinhos2005.pdf
-
-
