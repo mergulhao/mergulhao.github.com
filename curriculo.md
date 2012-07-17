@@ -1,11 +1,7 @@
 --- 
-layout: post
+layout: default
 title: 'Currículo'
-disqus_id: /2007/5/3/curriculo
-categories: 
-  - sobre
-tags:
-  - oportunidades
+permalink: "/sobre/curriculo/index.html"
 ---
 
 
