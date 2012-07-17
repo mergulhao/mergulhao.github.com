@@ -6,10 +6,8 @@ categories:
   []
 tags:
   - projetos
+image: http://mergulhao.info/assets/2007/9/24/logo_icard.gif
 ---
-
-
-<img src="http://mergulhao.info/assets/2007/9/24/logo_icard.gif" alt="logo icard" style="float: left; border: 0px; margin-right: 10px" />
 
 Durante o ano passado tive o prazer de trabalhar numa startup focada em mobile, com pessoas muito legais e fazendo softwares j2me de primeira linha. Infelizmente a startup não deu certo, mas as coisas legais não acabaram. O primeiro desenvolvimento em j2me foi o icard mobile. Trata-se de um pequeno aplicativo j2me que envia cartões de visita virtuais via e-mail. Ele fez um sucesso razoável no exterior, principalmente sudeste asiático, chegando a enviar alguns milhares de cartões por dia.
 
@@ -26,4 +24,3 @@ O domínio original do serviço era __www.icardmobile.com__, mas ele foi perdido
 Espero em breve fazer a internacionalização do site e do aplicativo que no momento estão disponíveis apenas em inglês.
 
 Por favor reportem situações de funcionamento e não funcionamento, enviando para mim a marca, o modelo dos aparelhos testados e os problemas encontrados. Sugestões de novas funcionalidades são bem-vindas. Aguardo o feedback!
-
