@@ -6,12 +6,8 @@ categories:
   []
 tags:
   - oportunidades
+image: http://mergulhao.info/assets/2009/1/22/v2v-logo.png
 ---
-
-
-<a href="http://v2v.com.br">
-<img src="http://mergulhao.info/assets/2009/1/22/v2v-logo.png" alt="Logo V2V" style="float: left;" />
-</a>
 
 O [Portal do Voluntário][pv] é um projeto que incentiva ações de voluntariado no âmbito nacional. Lá foi desenvolvida uma rede social chamada [V2V][]. Inicialmente era um projeto em php, sem testes e difícil de manter. Quando eu saí do [Lucidus][], o [Fernando][] me convidou para integrar a equipe dele e iniciar o desenvolvimento da nova versão do [V2V][], utilizando Rails e todas as boas práticas de desenvolvimento, testes etc.
 
@@ -33,5 +29,3 @@ Interessados entrem em contato em pvt.
 [Fernando]: http://github.com/elefante
 [V2V]: http://v2v.org.br
 [pv]: http://portaldovoluntario.org.br
-
-
