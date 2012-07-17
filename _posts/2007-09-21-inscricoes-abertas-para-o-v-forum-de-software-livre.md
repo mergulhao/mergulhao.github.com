@@ -6,10 +6,8 @@ categories:
   []
 tags:
   - eventos
+image: http://mergulhao.info/assets/2007/9/21/vforum.gif
 ---
-
-
-<img src="http://mergulhao.info/assets/2007/9/21/vforum.gif" alt="Logo V Forum" style="float: right; border: 0px;"/>
 
 Atenção pessoal! Estão abertas as inscrições para o V Fórum de Software Livre do Rio de Janeiro. Para se inscrever visite o [site](http://www.forumsoftwarelivre.org.br/) e abra o menu correspondente. A inscrição para participação nas palestras e circulação na área do evento é __GRATUITA__. Os minicursos são cobrados com desconto para estudantes e servidores públicos.
 
@@ -18,4 +16,3 @@ Esse ano mais uma vez contamos com quatro dias de fórum: dois no Clube de Engen
 Avançando um passo de cada vez, esse ano temos a confirmação do nosso primeiro palestrante internacional: [Maddog Hall](http://pt.wikipedia.org/wiki/Jon_Hall)! Foi uma grande conquista para o nosso evento. Esperamos com isso conseguir um pouco mais de visibilidade da comunidade de Software Livre do Rio de Janeiro, que sabemos ser grande, mas infelizmente muito dispersa.
 
 Até lá!
-
