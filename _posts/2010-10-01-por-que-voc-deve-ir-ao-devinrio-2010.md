@@ -1,15 +1,14 @@
---- 
+---
 layout: post
 title: 'Por que você deve ir ao Devinrio 2010'
 disqus_id: /2010/10/1/por-que-voc-deve-ir-ao-devinrio-2010
-categories: 
+categories:
   []
 tags:
   []
 ---
 
-
-<img src="http://mergulhao.info/assets/2010/10/1/DevInRio_logo-300x169.gif" alt="Logo Devinrio" class="float-left" />
+<ul class="thumbnails pull-left"><li class="span3"><a href="http://mergulhao.info/assets/2010/10/1/DevInRio_logo-300x169.gif" class="thumbnail"><img src="http://mergulhao.info/assets/2010/10/1/DevInRio_logo-300x169.gif" alt=""></a></li></ul>
 
 Estou achando incrivelmente alta a quantidade de desenvolvedores que não estão dando o devido valor aos eventos como o [Devinrio][dv]. Eu como consultor da [Helabs][he] tenho tido contato com desenvolvedores de diversos níveis, de várias empresas e eu percebo que eles não se interessam pela coisa.
 
@@ -23,10 +22,9 @@ Se a sua empresa não te incentiva a participar dos eventos, mas você gosta de 
 
 Você vai perder a oportunidade de fazer [Dojo][dj] com a nata do desenvolvimento de software carioca? Sério, só um louco perderia o Devinrio 2010. Vejo vocês lá.
 
-Sugiro fortemente que você também leia o excelente [post do Bernando Fontes sobre o Devinrio][post]. 
+Sugiro fortemente que você também leia o excelente [post do Bernando Fontes sobre o Devinrio][post].
 
 [dv]: http://devinrio.com.br
 [he]: http://helabs.com.br
 [dj]: http://dojorio.wordpress.com/
 [post]: http://www.bernardofontes.net/blog/porque-voce-deve-ir-ao-dev-in-rio-2010/
-
