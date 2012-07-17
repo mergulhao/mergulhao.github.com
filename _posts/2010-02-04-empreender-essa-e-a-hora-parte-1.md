@@ -1,16 +1,14 @@
---- 
+---
 layout: post
 title: 'Empreender, essa é a hora! - Parte 1'
 disqus_id: /2010/2/4/empreender-essa-e-a-hora-parte-1
-categories: 
+categories:
   []
 tags:
   - rails
   - empreendedorismo
+image: http://mergulhao.info/assets/2010/2/4/4327691929_4da2243985_m.jpg
 ---
-
-
-<img src="http://mergulhao.info/assets/2010/2/4/4327691929_4da2243985_m.jpg" alt="is this good for the company?" class="float-left" />
 
 Há pouco mais de um ano atrás eu fiz uma palestra no [Encontro de TI][eti] sobre [Empreendedorismo on Rails][eor]. A apresentação bombou, fez o maior sucesso, mas até hoje eu não tinha dado nenhum feedback sobre o que eu mesmo estava fazendo em relação ao que preguei na palestra. O fato é que 2009 foi um ano de muito trabalho, onde eu comecei a preparar os alicerces do que vou apresentar hoje. É sempre bom lembrar que tudo foi e continuará sendo feito durante os tempos vagos.
 
@@ -26,6 +24,3 @@ Foto de [magnetbox](http://www.flickr.com/photos/magnetbox/)([cc](http://creativ
 [eor]: http://mergulhao.info/2008/12/16/empreendedorismo-on-rails-no-encontro-de-ti
 [beta]: http://clientella.com.br/beta
 [form]: http://clientella.com.br
-
-
-
