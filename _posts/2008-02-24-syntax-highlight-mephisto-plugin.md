@@ -21,23 +21,21 @@ Utilizei como base o [plugin][pgdan] do [Dan Webb][dan] e fiz as modificações 
 
 Agora é só seguir as instruções do [README][readme] e já poderá fazer isso:
 
-<filter:jscode lang="ruby">
-class CreateContas < ActiveRecord::Migration 
-  def self.up 
-    create_table :contas do |t| 
-      t.string :codigo, :limit => 8, :null => false 
-      t.integer :parent_id 
-      t.integer :lft 
-      t.integer :rgt 
-      t.timestamps 
-    end 
-  end 
+    class CreateContas < ActiveRecord::Migration 
+      def self.up 
+        create_table :contas do |t| 
+          t.string :codigo, :limit => 8, :null => false 
+          t.integer :parent_id 
+          t.integer :lft 
+          t.integer :rgt 
+          t.timestamps 
+        end 
+      end 
 
-  def self.down 
-    drop_table :contas 
-  end 
-end
-</filter:jscode>
+      def self.down 
+        drop_table :contas 
+      end 
+    end
 
 A vantagem de utilizar um syntax highlighter client-side como o [dp.SyntaxHighlighter][dp] é que o seu código original fica limpo, fácil de editar novamente. Uma possível desvantagem é que pode ficar lento caso tenha muito código para fazer a sintaxe, já que ele usa javascript.
 
@@ -46,5 +44,3 @@ A vantagem de utilizar um syntax highlighter client-side como o [dp.SyntaxHighli
 [pgdan]: http://svn.danwebb.net/external/rails/plugins/filtered_column_code_highlighter/trunk/
 [dp]: http://code.google.com/p/syntaxhighlighter/
 [mephisto]: http://mephistoblog.com
-
-
