@@ -8,10 +8,8 @@ tags:
   - rails
   - divagando
   - xp
+image: http://mergulhao.info/assets/2008/1/12/invente_menos_problemas_1.jpg
 ---
-
-
-<img alt="Invente menos problemas" src="http://mergulhao.info/assets/2008/1/12/invente_menos_problemas_1.jpg" class="float-right"/>
 
 O [açucar União][uniao] está com uma campanha publicitária chamada **Viva Momentos de União**, que possui mensagens que fazem alusão a situações de prazer e bem-estar, realçando a importancia da qualidade de vida e tudo mais. Não se preocupem, não vou escrever sobre açucar!
 
@@ -49,5 +47,3 @@ Felizmente, mais uma vez, há 2 anos eu descobri o [Ruby][ruby] e o [Rails][rail
 [dry]: http://en.wikipedia.org/wiki/Don't_repeat_yourself
 [kiss]: http://en.wikipedia.org/wiki/Keep_it_Simple_Stupid
 [ruby]: http://www.ruby-lang.org/
-
-
