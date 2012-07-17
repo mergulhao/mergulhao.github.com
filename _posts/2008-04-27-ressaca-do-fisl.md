@@ -7,10 +7,8 @@ categories:
 tags:
   - divagando
   - palestra
+image: http://mergulhao.info/assets/2008/4/26/galera_fisl.jpg
 ---
-
-
-![Foto da Galera][foto]
 
 Para quem tinha pedido aqui estão os slides da minha palestra no FISL: [Rails2][rails2] e [Lucidus][lucidus]. Esse sem dúvida foi o melhor FISL que eu já participei. A minha palestra conjunta com o [Vinicius][vini] estava lotada (alguém sabe a lotação daquela sala? 200~300 pessoas?), pena que as fotos não ficaram boas. Preciso de uma camera melhor.
 
@@ -27,4 +25,3 @@ Foi bom conhecer/reencontrar essa galera legal. Um ótimo **networking**, como d
 
 [rails2]: http://mergulhao.info/assets/2008/4/27/rails2_fisl.pdf
 [lucidus]: http://mergulhao.info/assets/2008/4/27/lucidus_fisl.pdf
-
