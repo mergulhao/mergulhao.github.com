@@ -8,12 +8,8 @@ tags:
   - xp
   - projetos
   - divagando
+image: http://mergulhao.info/assets/2008/3/26/lucidus.png
 ---
-
-
-<div class="center">
-<img src="http://mergulhao.info/assets/2008/3/26/lucidus.png" alt="Logo projeto Lucidus do Grupo Santa Isabel e Improve It" title="Logo projeto Lucidus do Grupo Santa Isabel e Improve It"/>
-</div>
 
 Pela falta de tempo [estou um pouco atrasado][atrasado], mas ainda em tempo. Desde novembro do ano passsado -- passou muito rápido -- tenho trabalhado fulltime no [Lucidus][lucidus]. Todos [os agradecimentos necessários foram feitos][atrasado], então resta ressaltar a importancia deste projeto para mim, como desenvolvedor, profissional, pessoa.
 
@@ -34,4 +30,3 @@ Este com certeza é um projeto especial. Parabéns!
 [xp]: http://www.improveit.com.br/xp
 [com]: http://www.improveit.com.br/xp/valores/comunicacao
 [arrogante]: http://www.akitaonrails.com/2007/4/14/off-topic-seja-arrogante
-
