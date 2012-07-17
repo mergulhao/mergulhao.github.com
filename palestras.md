@@ -137,6 +137,10 @@ Palestra que expõe os conceitos de funcionamento do projeto LTSP e apresenta o 
 
 # Reaproveitamento de Lixo Tecnológico com SL - Ourinhos - Setembro 2005
 
+<div style="width: 500px;">
+  <script async="true" class="speakerdeck-embed" data-id="5005abab9d0234000200415e" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+</div>
+
 Palestra que apresenta o caso de sucesso da UNIRIO com a implantação do LTSP em quiosques de acesso à internet. Foi apresentada na 2a. Semana de Software Livre de Ourinhos.
 
 [Download][ourinhos]
