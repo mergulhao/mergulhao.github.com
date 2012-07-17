@@ -6,10 +6,8 @@ categories:
   []
 tags:
   - eventos
+image: http://mergulhao.info/assets/2008/6/14/maratona.jpg
 ---
-
-
-<img src="http://mergulhao.info/assets/2008/6/14/maratona.jpg" class="float-left" alt="logo_maratona"/>
 
 Em julho teremos no Rio de Janeiro a I Ultra Maratona How To de Software Livre! É um evento com 20 tutoriais práticos de 4 horas cada. Terão desde cursos de utilização de BrOffice e Inkscape, passando por segurança de servidores, hardening e desenvolvimento. Para ver a [grade completa acesse][grade]. Os preços são bem convidativos, entre R$60 e R$90.
 
@@ -22,4 +20,3 @@ Eu serei tutor de dois. O primeiro, com nome de "XP Game e o Jogo da comunicaç�
 [site]: http://www.ultramaratonahowto.com.br
 [tapa]: http://www.improveit.com.br/empresa/tapajos
 [felipe]: http://www.improveit.com.br/empresa/felipe
-
