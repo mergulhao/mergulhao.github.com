@@ -1,17 +1,13 @@
---- 
+---
 layout: post
 title: 'Presente de Natal da Hostnet para a comunidade Rails do Brasil'
 disqus_id: /2008/12/15/presente-de-natal-da-hostnet-para-a-comunidade-rails-do-brasil
-categories: 
+categories:
   []
 tags:
   []
+image: http://mergulhao.info/assets/2008/12/15/logo_hostnet.gif
 ---
-
-
-<a href="http://hostnet.com.br">
-<img src="http://mergulhao.info/assets/2008/12/15/logo_hostnet.gif" alt="Logo Hostnet" style="float: left;" />
-</a>
 
 A promoção
 ----------
@@ -30,5 +26,3 @@ O plano Ruby on Rails da [Hostnet][], apesar de ser shared hosting, possui servi
 
 [Hostnet]: http://www.hostnet.com.br
 [Phusion]: http://www.phusion.nl/
-
-
