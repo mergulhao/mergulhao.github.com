@@ -7,11 +7,13 @@ permalink: "/tags/index.html"
 {% for tag in site.tags %}
   {% assign tag_name = tag[0] %}
   {% assign posts = tag[1] %}
-  <h3>
-    <a href="/tags/#{{tag_name}}" id="{{tag_name}}">{{tag_name}}</a>
-  </h3>
+  <article class="well">
+  <h2><a href="/tags/#{{tag_name}}" id="{{tag_name}}">{{tag_name}}</a></h2>
+  <br/>
   {% for post in posts %}
-    <a href="{{ post.url }}">{{post.title}}</a>
-    <br/>
+    <p>
+      <span class="label label-inverse">{{ post.date | date: "%d/%m/%Y" }}</span>&nbsp;&nbsp;<a href="{{ post.url }}">{{post.title}}</a>
+    </p>
   {% endfor %}
+  </article>
 {% endfor %}
