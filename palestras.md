@@ -113,12 +113,12 @@ Data da defesa: 27 de março de 2007.
 
 [Monografia][2] --- Monografia em formato pdf  
 [Apresentação monografia][3] --- Apresentação da defesa da monografia em formado odp
-[Download completo][4] --- Imagem iso (80MB)
+[Download completo][4] --- Arquivo zip (~80MB)
 
 [1]: http://www.uniriotec.br
 [2]: http://mergulhao.info/assets/2007/5/2/monografia.pdf
 [3]: http://mergulhao.info/assets/2007/5/2/monografia_apresentacao.odp
-[4]: http://www.mergulhao.info/assets/2007/7/29/monografia.iso
+[4]: https://dl.dropbox.com/u/547141/mergulhao-info-assets/monografia.zip
 
 # LTSP: Linux Terminal Server Project - Palestra ENECOMP - Agosto 2006
 
