@@ -24,28 +24,28 @@ Abaixo segue a saga na tentativa, ainda sem solução, de resolver o problema co
 > To : LV_ID.WNLV.WW.00.PT.MSF.SEA.TS.T01.RTG.00.EM    
 > Subject : Windows Live ID:Eu tenho um problema ou u:Outros
 > 
-> Serviço:  [Service:]  
+> Serviço:  \[Service:\]  
 >    Windows Live ID
 > 
-> Tipo de problema:  [What type of problem do you have?]  
-> Eu tenho um problema ou uma pergunta diferente [Eu tenho um problema ou uma pergunta diferente]
+> Tipo de problema:  \[What type of problem do you have?\]  
+> Eu tenho um problema ou uma pergunta diferente \[Eu tenho um problema ou uma pergunta diferente\]
 > 
-> Outros [Outros]  
+> Outros \[Outros\]  
 > 
-> Nome completo: [Full name:]  
+> Nome completo: \[Full name:\]  
 >    Sylvestre Mergulhão
 > 
-> Para que endereço de e-mail você deseja que a resposta seja enviada? [The e-mail address for us to send a response:]  
->    mergulhao83@***.com
+> Para que endereço de e-mail você deseja que a resposta seja enviada? \[The e-mail address for us to send a response:\]  
+>    mergulhao83@\*\*\*.com
 > 
-> Endereço de email/identificação do membro principal associado à conta que você está consultando: [Primary e-mail address/member ID associated with the account you are inquiring about:]  
->    jgagne33@***.com
+> Endereço de email/identificação do membro principal associado à conta que você está consultando: \[Primary e-mail address/member ID associated with the account you are inquiring about:\]  
+>    jgagne33@\*\*\*.com
 
-> Para assegurar uma resolução rápida do problema, forneça o maior número possível de detalhes, incluindo a data e hora a que ocorreu o problema, uma descrição do que estava a tentar fazer no momento, os passos detalhados que executou até ao momento da ocorrência do problema e informações detalhadas sobre quaisquer mensagens de erro que tenham sido apresentadas. [Be specific when describing your problem. The details that you include enable us to promptly send you the most likely solution to your issue.]  
+> Para assegurar uma resolução rápida do problema, forneça o maior número possível de detalhes, incluindo a data e hora a que ocorreu o problema, uma descrição do que estava a tentar fazer no momento, os passos detalhados que executou até ao momento da ocorrência do problema e informações detalhadas sobre quaisquer mensagens de erro que tenham sido apresentadas. \[Be specific when describing your problem. The details that you include enable us to promptly send you the most likely solution to your issue.\]  
 > 
 >    Olá,
 > 
-> Eu tenho um Windows Livre Id com o email jgagne33@***.com e eu trabalho para o site redeparede.com. Nós estamos registrando nosso domínios para usar o Live Services, então eu estou criando os projetos no Azure Services Developer Portal. Tenho algumas perguntas:
+> Eu tenho um Windows Livre Id com o email jgagne33@\*\*\*.com e eu trabalho para o site redeparede.com. Nós estamos registrando nosso domínios para usar o Live Services, então eu estou criando os projetos no Azure Services Developer Portal. Tenho algumas perguntas:
 > 
 > - Nós temos muitos domínios diferentes, mas que são a mesma aplicação no backend. Eu tenho mesmo que registrar cada um de nossos domínios como projetos? A única diferença entre eles é a url de retorno, onde a única mudança é o domínio.
 > 

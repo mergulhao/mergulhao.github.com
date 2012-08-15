@@ -86,7 +86,7 @@ Logo abaixo vem o método Mailman::Application.run, que é onde a mágica aconte
 
 Nele nós podemos configurar o que, no linguajar do Mailman, são chamados de 'rotas'. Uma rota consiste em um método ( to, from, cc, subject, body), uma string ou regex e um bloco.
 
-O método diz onde o Mailman vai procurar pela string ou regex, no nosso caso estamos procurando no campo "to" do e-mail. Todo e-mail cujo "to" bater com a string vai ser passada para o bloco. As partes do "to" que forem capturadas pelo parte %domain%, por exemplo, estará disponível no bloco como params[:domain]. A mensagem então é passada para o método receive do Mailer.
+O método diz onde o Mailman vai procurar pela string ou regex, no nosso caso estamos procurando no campo "to" do e-mail. Todo e-mail cujo "to" bater com a string vai ser passada para o bloco. As partes do "to" que forem capturadas pelo parte %domain%, por exemplo, estará disponível no bloco como params\[:domain\]. A mensagem então é passada para o método receive do Mailer.
 
 Agora, com o script pronto, precisamos nos assegurar que ele rode regularmente no servidor. Para isso existe o Cron, e nós usaremos o Whenever para agendar a execução do script/mailman.
 

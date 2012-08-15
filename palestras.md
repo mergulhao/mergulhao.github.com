@@ -101,7 +101,7 @@ Esta palestra é baseada na minha monografia de conclusão de curso. Faz uma bre
 
 # Monografia de conclusão - Março 2007
 
-<span style="color: red;">**Atualização:**</span> Disponibilizado agora download completo, que inclui: Monografia, slides da apresentação, projeto java+struts, projeto Rails, audio da apresentação(não é a melhor gravação, mas se consegue ouvir).
+&#x20;<span style="color: red;">**Atualização:**</span> Disponibilizado agora download completo, que inclui: Monografia, slides da apresentação, projeto java+struts, projeto Rails, audio da apresentação(não é a melhor gravação, mas se consegue ouvir).
 
 Essa foi a monografia desenvolvida para conclusão do curso de Bacharelado em Sistemas de Informação que cursei na [UNIRIO][1] --- Universidade Federal do Estado do Rio de Janeiro. Trata-se de um comparativo de frameworks para desenvolvimento web. Foram estudados para o comparativo os frameworks Struts e Hibernate, desenvolvidos em Java, e o framework Rails, desenvolvido em Ruby.
 
