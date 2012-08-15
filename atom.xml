@@ -1,0 +1,32 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>Sylvestre Mergulhão</title>
+  <link href="http://mergulhao.info/"/>
+  <link type="application/atom+xml" rel="self" href="http://mergulhao.info/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://mergulhao.info/</id>
+  <author>
+    <name>Sylvestre Mergulhão</name>
+    <email>contato@mergulhao.info</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://mergulhao.info{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://mergulhao.info{{ post.url }}"/>
+    <title>{{ post.title }}</title>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Sylvestre Mergulhão</name>
+      <uri>http://mergulhao.info/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+ 
+</feed>
