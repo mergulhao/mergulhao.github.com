@@ -4,24 +4,37 @@ title: 'Artigos e palestras'
 permalink: "/artigos/index.html"
 ---
 
-Coloco a disposição aqui alguns dos artigos -- acadêmicos ou não -- que elaborei ou que participei da elaboração.
+<h1>Palestras</h1>
 
-# Scaling Rails: Redeparede.com servindo 7,5 milhões por mês - Palestra - Junho 2009
+<div class="row">
+  <div class="span12 well">
+    <div class="row">
+      <div class="span6">
+        <script async="true" class="speakerdeck-embed" data-id="5006f071a1ddc800020055ee" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+      </div>
+      <div class="span6">
+        <h2>Scaling Rails: Redeparede.com servindo 7,5 milhões por mês - Palestra - Junho 2009</h2>
+        <p>Apresentada no FISL 10, Porto Alegre.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-Apresentada no FISL 10, Porto Alegre.
-
-[Download](http://mergulhao.info/assets/2009/6/26/redeparede.odp)  
-
-# Empreendedorismo on Rails - Palestra - Novembro 2008
-Palestra gentilmente cedida pelo [Vinícius][vini], originalmente apresentada no [Rails Summit 2008][summit2008].
-
-[Download apresentação](http://mergulhao.info/assets/2008/12/3/apresentacao.pdf)  
-[Download palestra](http://mergulhao.info/assets/2008/12/3/EmpreendedorismoOnRails.pdf)
-
-A palestra possui muitas figuras, para entender melhor o contexto é bom acompanhar os slides lendo a [transcrição da palestra](http://mergulhao.info/2008/10/16/rails-summit-dia-16-vinicius-teles).
-
-[summit2008]: http://www.locaweb.com.br/railssummit/
-[vini]: http://www.improveit.com.br/empresa/vinicius
+<div class="row">
+  <div class="span12 well">
+    <div class="row">
+      <div class="span6">
+        <script async="true" class="speakerdeck-embed" data-id="50074ed87f47150002020a1e" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+        <script async="true" class="speakerdeck-embed" data-id="50074ff4a1ddc80002020465" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+      </div>
+      <div class="span6">
+        <h2>Empreendedorismo on Rails - Palestra - Novembro 2008</h2>
+        <p>Palestra gentilmente cedida pelo <a href="http://www.improveit.com.br/empresa/vinicius">Vinícius</a>, originalmente apresentada no <a href="http://www.locaweb.com.br/railssummit/">Rails Summit 2008</a>.</p>
+        <p>A palestra possui muitas figuras, para entender melhor o contexto é bom acompanhar os slides lendo a <a href="http://mergulhao.info/2008/10/16/rails-summit-dia-16-vinicius-teles/">transcrição da palestra</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 # Utilizando Bluetooth com Ruby - Palestra - Outubro 2008
 
@@ -128,20 +141,20 @@ Palestra que expõe os conceitos de funcionamento do projeto LTSP. Foi apresenta
 [ENECOMP_LTSP]: http://mergulhao.info/assets/2007/5/5/palestra_enecomp2006.pdf
 [enec]: http://www.enec.org.br
 
-# Reaproveitamento de Lixo Tecnológico com SL - Palestra - Outubro 2005
 
-Palestra que expõe os conceitos de funcionamento do projeto LTSP e apresenta o caso de sucesso da UNIRIO com sua implantação para quiosques de acesso à internet. Foi apresentada na 3a. Semana de Software Livre do Rio de Janeiro.
-
-[Download][3semana]
-[3semana]: http://mergulhao.info/assets/2007/5/5/palestra_3semana2005.pdf
-
-# Reaproveitamento de Lixo Tecnológico com SL - Ourinhos - Setembro 2005
-
-<div style="width: 500px;">
-  <script async="true" class="speakerdeck-embed" data-id="5005abab9d0234000200415e" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+<div class="row">
+  <div class="span6"><div class="well">
+    <h2>Reaproveitamento de Lixo Tecnológico com SL - Palestra - Outubro 2005</h2>
+    <div style="width: 400px;">
+      <script async="true" class="speakerdeck-embed" data-id="5006e3ff7f47150002002067" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+    </div>
+    <p>Palestra que expõe os conceitos de funcionamento do projeto LTSP e apresenta o caso de sucesso da UNIRIO com sua implantação para quiosques de acesso à internet. Foi apresentada na 3a. Semana de Software Livre do Rio de Janeiro.</p>
+  </div></div>
+  <div class="span6"><div class="well">
+    <h2>Reaproveitamento de Lixo Tecnológico com SL - Ourinhos - Setembro 2005</h2>
+    <div style="width: 400px;">
+      <script async="true" class="speakerdeck-embed" data-id="5006d9e7dbf841000203abd4" data-ratio="1.3350717079530638" src="//speakerdeck.com/assets/embed.js">&nbsp;</script>
+    </div>
+    <p>Palestra que apresenta o caso de sucesso da UNIRIO com a implantação do LTSP em quiosques de acesso à internet. Foi apresentada na 2a. Semana de Software Livre de Ourinhos.</p>
+  </div></div>
 </div>
-
-Palestra que apresenta o caso de sucesso da UNIRIO com a implantação do LTSP em quiosques de acesso à internet. Foi apresentada na 2a. Semana de Software Livre de Ourinhos.
-
-[Download][ourinhos]
-[ourinhos]: http://mergulhao.info/assets/2007/5/5/palestra_ourinhos2005.pdf
