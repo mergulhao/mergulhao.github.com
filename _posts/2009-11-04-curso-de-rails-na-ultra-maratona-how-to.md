@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Curso de Rails na Ultra Maratona How To!'
-disqus_id: /2009/11/4/curso-de-rails-na-ultra-maratona-how-to
 categories: 
   []
 tags:

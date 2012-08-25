@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Enecomp 2007 - Cuiabá'
-disqus_id: /2007/8/12/enecomp-2007-cuiaba
 categories: 
   []
 tags:

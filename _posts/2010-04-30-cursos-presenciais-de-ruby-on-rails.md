@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Cursos presenciais de Ruby on Rails'
-disqus_id: /2010/4/30/cursos-presenciais-de-ruby-on-rails
 categories: 
   []
 tags:

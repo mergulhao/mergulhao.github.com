@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Uma rapidinha: mkmf (LoadError)'
-disqus_id: /2007/8/29/uma-rapidinha-mkmf-loaderror
 categories: 
   []
 tags:

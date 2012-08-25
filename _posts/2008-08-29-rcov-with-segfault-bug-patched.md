@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Rcov with segfault bug patched'
-disqus_id: /2008/8/29/rcov-with-segfault-bug-patched
 categories: 
   []
 tags:

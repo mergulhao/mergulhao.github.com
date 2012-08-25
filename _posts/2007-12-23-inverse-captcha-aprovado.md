@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Inverse Captcha: Aprovado!'
-disqus_id: /2007/12/23/inverse-captcha-aprovado
 categories: 
   []
 tags:

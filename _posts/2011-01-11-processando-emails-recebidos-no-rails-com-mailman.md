@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Processando emails recebidos no Rails com MailMan'
-disqus_id: /2011/1/11/processando-emails-recebidos-no-rails-com-mailman
 categories: 
   []
 tags:

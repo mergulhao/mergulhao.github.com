@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Diff para Gnome'
-disqus_id: /2007/6/6/diff-para-gnome
 categories: 
   []
 tags:

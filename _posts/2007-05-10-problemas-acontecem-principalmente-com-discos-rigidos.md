@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Problemas acontecem... principalmente com discos rígidos'
-disqus_id: /2007/5/10/problemas-acontecem-principalmente-com-discos-rigidos
 categories: 
   []
 tags:

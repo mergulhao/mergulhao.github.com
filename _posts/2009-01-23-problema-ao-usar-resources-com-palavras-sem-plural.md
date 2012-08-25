@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Problema ao usar resources com palavras sem plural'
-disqus_id: /2009/1/23/problema-ao-usar-resources-com-palavras-sem-plural
 categories: 
   []
 tags:

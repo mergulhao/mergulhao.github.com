@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Como colocar uma aplicação no ar?'
-disqus_id: /2011/7/10/como-colocar-uma-aplica-o-no-ar
 categories: 
   []
 tags:

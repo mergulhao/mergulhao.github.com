@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Rails Summit dia 15: George Malamidis e Danilo Sato'
-disqus_id: /2008/10/15/rails-summit-dia-15-george-malamidis-e-danilo-sato
 categories: 
   []
 tags:

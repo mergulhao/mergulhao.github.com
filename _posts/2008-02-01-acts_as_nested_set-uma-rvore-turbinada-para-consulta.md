@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Acts_as_nested_set, uma árvore turbinada para consulta'
-disqus_id: /2008/2/1/acts_as_nested_set-uma-rvore-turbinada-para-consulta
 categories: 
   []
 tags:

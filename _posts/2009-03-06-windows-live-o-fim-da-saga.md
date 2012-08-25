@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Windows live, o fim da saga!'
-disqus_id: /2009/3/6/windows-live-o-fim-da-saga
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Associações com ActiveRecord'
-disqus_id: /2007/5/18/associacoes-com-activerecord
 categories: 
   []
 tags:

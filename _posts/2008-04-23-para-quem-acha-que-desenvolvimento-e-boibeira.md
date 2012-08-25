@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Para quem acha que desenvolvimento é bobeira...'
-disqus_id: /2008/4/23/para-quem-acha-que-desenvolvimento-e-boibeira
 categories: 
   []
 tags:

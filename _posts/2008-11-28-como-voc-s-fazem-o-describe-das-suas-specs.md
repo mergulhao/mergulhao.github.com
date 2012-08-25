@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Como vocês fazem o "describe" das suas specs?'
-disqus_id: /2008/11/28/como-voc-s-fazem-o-describe-das-suas-specs
 categories: 
   []
 tags:

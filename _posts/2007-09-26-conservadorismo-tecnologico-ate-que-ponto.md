@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Conservadorismo tecnológico, até que ponto?'
-disqus_id: /2007/9/26/conservadorismo-tecnologico-ate-que-ponto
 categories: 
   []
 tags:

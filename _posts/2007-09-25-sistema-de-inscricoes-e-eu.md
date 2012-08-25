@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Sistema de inscrições e eu'
-disqus_id: /2007/9/25/sistema-de-inscricoes-e-eu
 categories: 
   []
 tags:

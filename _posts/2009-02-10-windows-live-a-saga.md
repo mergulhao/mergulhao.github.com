@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Windows live, a saga!'
-disqus_id: /2009/2/10/windows-live-a-saga
 categories: 
   []
 tags:

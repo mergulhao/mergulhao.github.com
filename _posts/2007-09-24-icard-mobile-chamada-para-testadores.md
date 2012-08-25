@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'icard mobile, chamada para testadores'
-disqus_id: /2007/9/24/icard-mobile-chamada-para-testadores
 categories: 
   []
 tags:

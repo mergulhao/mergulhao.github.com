@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Ressaca do FISL'
-disqus_id: /2008/4/27/ressaca-do-fisl
 categories: 
   []
 tags:

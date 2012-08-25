@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Rails Summit dia 15: Dr Nic'
-disqus_id: /2008/10/15/rails-summit-dia-15-dr-nic
 categories:
   []
 tags:

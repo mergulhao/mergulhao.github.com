@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Criando um servidor smtp com postfix the simple way'
-disqus_id: /2009/9/15/criando-um-servidor-smtp-com-postfix-the-simple-way
 categories: 
   []
 tags:

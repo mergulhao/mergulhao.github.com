@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Recuperando tabela de partições que Windows Vista apagou'
-disqus_id: /2009/3/31/recuperando-tabela-de-parti-es-que-windows-vista-apagou
 categories:
   []
 tags:

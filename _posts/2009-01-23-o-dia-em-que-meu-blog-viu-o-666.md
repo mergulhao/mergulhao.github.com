@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'O dia em que meu blog viu o 666 ;)'
-disqus_id: /2009/1/23/o-dia-em-que-meu-blog-viu-o-666
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Unresponsive script no selenium'
-disqus_id: /2008/7/11/unresponsive-script-no-selenium
 categories: 
   []
 tags:

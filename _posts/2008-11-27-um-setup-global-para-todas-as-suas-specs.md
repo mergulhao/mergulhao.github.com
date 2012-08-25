@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Um "setup" global para todas as suas specs'
-disqus_id: /2008/11/27/um-setup-global-para-todas-as-suas-specs
 categories: 
   []
 tags:

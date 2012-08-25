@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Palestra Utilizando Ruby com Bluetooth'
-disqus_id: /2008/11/7/palestra-utilizando-ruby-com-bluetooth
 categories: 
   []
 tags:

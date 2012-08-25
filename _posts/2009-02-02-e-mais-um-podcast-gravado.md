@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'E mais um podcast gravado!'
-disqus_id: /2009/2/2/e-mais-um-podcast-gravado
 categories: 
   []
 tags:

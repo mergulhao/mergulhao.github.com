@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'acts_as_taggable_on_steroids e will_paginate'
-disqus_id: /2009/1/21/acts_as_taggable_on_steroids-e-will_paginate
 categories: 
   []
 tags:

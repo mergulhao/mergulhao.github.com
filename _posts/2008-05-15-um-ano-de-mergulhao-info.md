@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Um ano de mergulhao.info'
-disqus_id: /2008/5/15/um-ano-de-mergulhao-info
 categories: 
   []
 tags:

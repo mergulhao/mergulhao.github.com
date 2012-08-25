@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: '"git revert" não é o mesmo que "svn revert"!'
-disqus_id: /2008/2/19/git-revert-nao-e-o-mesmo-que-svn-revert
 categories: 
   []
 tags:

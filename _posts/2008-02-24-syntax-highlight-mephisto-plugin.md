@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Syntax Highlight Mephisto plugin'
-disqus_id: /2008/2/24/syntax-highlight-mephisto-plugin
 categories: 
   []
 tags:

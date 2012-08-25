@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Atrasado, mas em tempo: 1 ano de Lucidus'
-disqus_id: /2008/3/26/atrasado-mas-em-tempo-1-ano-de-lucidus
 categories: 
   []
 tags:

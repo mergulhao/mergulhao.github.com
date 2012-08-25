@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Em Julho: Ultra Maratona How To!'
-disqus_id: /2008/6/14/em-julho-ultra-maratona-how-to
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Invitation for companies to hire me / Procuro empresa para me contratar'
-disqus_id: /2008/7/31/procuro-empresa-para-me-contratar
 categories: 
   []
 tags:

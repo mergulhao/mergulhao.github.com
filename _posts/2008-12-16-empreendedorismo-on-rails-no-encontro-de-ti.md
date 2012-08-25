@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Empreendedorismo on Rails no Encontro de TI'
-disqus_id: /2008/12/16/empreendedorismo-on-rails-no-encontro-de-ti
 categories: 
   []
 tags:

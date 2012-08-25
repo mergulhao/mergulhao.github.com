@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Invente menos problemas!'
-disqus_id: /2008/1/12/invente-menos-problemas
 categories: 
   []
 tags:

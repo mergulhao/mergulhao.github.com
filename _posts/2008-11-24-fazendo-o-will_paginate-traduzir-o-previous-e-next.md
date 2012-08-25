@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Fazendo o will_paginate traduzir o "Previous" e "Next"'
-disqus_id: /2008/11/24/fazendo-o-will_paginate-traduzir-o-previous-e-next
 categories: 
   []
 tags:

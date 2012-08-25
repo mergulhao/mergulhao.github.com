@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Colecionar débitos técnicos não é maneiro não'
-disqus_id: /2009/8/17/colecionar-d-bitos-t-cnicos-n-o-maneiro-n-o
 categories: 
   []
 tags:

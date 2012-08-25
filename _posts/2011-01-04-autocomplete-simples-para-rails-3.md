@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Autocomplete simples para Rails 3 com jQuery'
-disqus_id: /2011/1/4/autocomplete-simples-para-rails-3
 categories: 
   []
 tags:

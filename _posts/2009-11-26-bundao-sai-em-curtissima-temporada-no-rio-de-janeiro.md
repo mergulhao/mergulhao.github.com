@@ -1,7 +1,6 @@
 ---
 layout: post
 title: '"Bundão" sai em curtíssima temporada no Rio de Janeiro!'
-disqus_id: /2009/11/26/bundao-sai-em-curtissima-temporada-no-rio-de-janeiro
 categories:
   []
 tags:

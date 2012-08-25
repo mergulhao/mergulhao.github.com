@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Tentando começar'
-disqus_id: /2007/4/28/tentando-comecar
 categories: 
   []
 tags:

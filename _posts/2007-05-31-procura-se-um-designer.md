@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Procura-se um designer'
-disqus_id: /2007/5/31/procura-se-um-designer
 categories: 
   []
 tags:

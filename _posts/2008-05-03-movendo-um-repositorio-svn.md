@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Movendo um repositório SVN'
-disqus_id: /2008/5/3/movendo-um-repositorio-svn
 categories: 
   []
 tags:

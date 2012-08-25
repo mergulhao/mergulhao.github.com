@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Novo Projeto do StartupDEV: ContaCal'
-disqus_id: /2011/8/22/novo-projeto-do-startupdev-contacal
 categories: 
   []
 tags:

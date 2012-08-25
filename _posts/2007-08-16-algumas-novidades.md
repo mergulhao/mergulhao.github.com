@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Algumas novidades'
-disqus_id: /2007/8/16/algumas-novidades
 categories: 
   []
 tags:

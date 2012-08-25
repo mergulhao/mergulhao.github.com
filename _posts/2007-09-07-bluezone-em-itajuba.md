@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Bluezone em Itajubá'
-disqus_id: /2007/9/7/bluezone-em-itajuba
 categories: 
   []
 tags:

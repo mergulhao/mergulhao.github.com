@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'mergulhaoinfo no imasters'
-disqus_id: /2009/3/6/mergulhaoinfo-no-imasters
 categories: 
   []
 tags:

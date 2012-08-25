@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Fisl chegando e algumas novidades'
-disqus_id: /2008/4/12/fisl-chegando-e-algumas-novidades
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Por que eu sou fanático por testes e você é um bundão'
-disqus_id: /2009/10/29/por-que-eu-sou-fan-tico-por-testes-e-voc-um-bund-o
 categories:
   []
 tags:

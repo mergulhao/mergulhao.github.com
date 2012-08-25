@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Curso de administração Linux e deploy de Apps Rails'
-disqus_id: /2010/2/24/curso-de-administracao-linux-e-deploy-de-apps-rails
 categories:
   []
 tags:

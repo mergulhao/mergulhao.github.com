@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'V2V Procura por desenvolvedores Rails'
-disqus_id: /2009/1/22/v2v-procura-por-desenvolvedores-rails
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Litespeed como proxy para o Apache servir SVN'
-disqus_id: /2008/5/3/litespeed-como-proxy-para-o-apache-servir-svn
 categories: 
   []
 tags:

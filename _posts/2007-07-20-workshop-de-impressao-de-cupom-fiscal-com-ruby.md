@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Workshop de impressão de cupom fiscal com Ruby'
-disqus_id: /2007/7/20/workshop-de-impressao-de-cupom-fiscal-com-ruby
 categories: 
   []
 tags:

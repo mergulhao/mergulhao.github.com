@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Não sejam medíocres!'
-disqus_id: /2007/5/24/nao-sejam-mediocres
 categories: 
   []
 tags:

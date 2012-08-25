@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Nova seção: Cheat sheets'
-disqus_id: /2009/2/7/nova-se-o-cheat-sheets
 categories: 
   []
 tags:

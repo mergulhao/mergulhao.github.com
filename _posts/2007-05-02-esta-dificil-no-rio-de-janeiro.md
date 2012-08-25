@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Está difícil no Rio de Janeiro'
-disqus_id: /2007/5/2/esta-dificil-no-rio-de-janeiro
 categories: 
   []
 tags:

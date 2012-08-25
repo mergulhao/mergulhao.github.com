@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Disabling my public svn'
-disqus_id: /2008/9/15/disabling-my-public-svn
 categories: 
   []
 tags:

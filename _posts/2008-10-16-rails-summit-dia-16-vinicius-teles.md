@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Rails Summit dia 16: Vinicius Teles'
-disqus_id: /2008/10/16/rails-summit-dia-16-vinicius-teles
 categories: 
   []
 tags:

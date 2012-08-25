@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Palestra sobre Rails 2 no FISL!'
-disqus_id: /2008/3/17/palestra-sobre-rails-2-no-fisl
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Presente de Natal da Hostnet para a comunidade Rails do Brasil'
-disqus_id: /2008/12/15/presente-de-natal-da-hostnet-para-a-comunidade-rails-do-brasil
 categories:
   []
 tags:

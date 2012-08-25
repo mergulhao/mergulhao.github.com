@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Por que você deve ir ao Devinrio 2010'
-disqus_id: /2010/10/1/por-que-voc-deve-ir-ao-devinrio-2010
 categories:
   []
 tags:

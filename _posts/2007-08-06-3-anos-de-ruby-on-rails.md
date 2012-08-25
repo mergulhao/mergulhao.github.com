@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: '3 anos de Ruby on Rails'
-disqus_id: /2007/8/6/3-anos-de-ruby-on-rails
 categories: 
   []
 tags:

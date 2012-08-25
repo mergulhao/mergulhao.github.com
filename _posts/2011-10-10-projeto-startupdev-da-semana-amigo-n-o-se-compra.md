@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Projeto StartupDEV da Semana: Amigo não se compra!'
-disqus_id: /2011/10/10/projeto-startupdev-da-semana-amigo-n-o-se-compra
 categories: 
   []
 tags:

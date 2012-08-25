@@ -1,7 +1,6 @@
 ---
 layout: post
 title: '3o. Linux Install Fest'
-disqus_id: /2009/7/3/3o-linux-install-fest
 categories:
   []
 tags:

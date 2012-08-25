@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Curso de Ruby gratuito no Rubylearning.org'
-disqus_id: /2008/3/30/curso-de-ruby-gratuito-no-rubylearning-org
 categories: 
   []
 tags:

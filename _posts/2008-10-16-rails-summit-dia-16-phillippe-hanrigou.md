@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Rails Summit dia 16: Phillippe Hanrigou'
-disqus_id: /2008/10/16/rails-summit-dia-16-phillippe-hanrigou
 categories: 
   []
 tags:

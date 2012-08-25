@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Se seu desenvolvedor está falando, pense que pode ser sério'
-disqus_id: /2009/12/8/se-seu-desenvolvedor-esta-falando-pense-que-pode-ser-serio
 categories: 
   []
 tags:

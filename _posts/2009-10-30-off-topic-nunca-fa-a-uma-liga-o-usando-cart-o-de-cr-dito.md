@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: '[OFF-TOPIC] Nunca faça uma ligação usando Cartão de Crédito'
-disqus_id: /2009/10/30/off-topic-nunca-fa-a-uma-liga-o-usando-cart-o-de-cr-dito
 categories: 
   []
 tags:

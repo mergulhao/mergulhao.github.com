@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Analizando cobertura dos testes com Rcov'
-disqus_id: /2007/8/1/analizando-cobertura-dos-testes-com-rcov
 categories: 
   []
 tags:

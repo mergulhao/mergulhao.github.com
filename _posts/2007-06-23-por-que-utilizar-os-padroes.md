@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Por que utilizar os padrões web?'
-disqus_id: /2007/6/23/por-que-utilizar-os-padroes
 categories: 
   []
 tags:

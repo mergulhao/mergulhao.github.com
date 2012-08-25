@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Rails Summit dia 15: Chad Fowler'
-disqus_id: /2008/10/15/rails-summit-dia-15-chad-fowler
 categories:
   []
 tags:

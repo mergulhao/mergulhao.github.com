@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Empreender, essa é a hora! - Parte 1'
-disqus_id: /2010/2/4/empreender-essa-e-a-hora-parte-1
 categories:
   []
 tags:

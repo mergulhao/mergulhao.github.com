@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Atualização - Monografia Rails x Struts'
-disqus_id: /2007/7/29/atualizacao-monografia-rails-x-struts
 categories: 
   []
 tags:

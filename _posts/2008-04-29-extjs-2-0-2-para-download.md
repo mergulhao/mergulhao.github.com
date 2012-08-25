@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'extjs 2.0.2 para download'
-disqus_id: /2008/4/29/extjs-2-0-2-para-download
 categories: 
   []
 tags:

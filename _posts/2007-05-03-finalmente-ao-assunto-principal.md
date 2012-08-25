@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Finalmente, ao assunto principal!'
-disqus_id: /2007/5/3/finalmente-ao-assunto-principal
 categories: 
   []
 tags:

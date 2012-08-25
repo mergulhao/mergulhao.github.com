@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Fazendo thumbnails de tamanho fixo com attachment_fu'
-disqus_id: /2009/3/17/fazendo-thumbnails-de-tamanho-fixo-com-attachment_fu
 categories: 
   []
 tags:

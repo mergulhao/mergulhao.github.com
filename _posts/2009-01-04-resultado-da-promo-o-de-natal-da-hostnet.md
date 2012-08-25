@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Resultado da Promoção de Natal da Hostnet'
-disqus_id: /2009/1/4/resultado-da-promo-o-de-natal-da-hostnet
 categories: 
   []
 tags:

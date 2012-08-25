@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Participação no Railsbox podcast'
-disqus_id: /2008/9/29/participa-o-no-railsbox-podcast
 categories: 
   []
 tags:

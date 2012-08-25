@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Encontro do XP Rio'
-disqus_id: /2007/5/21/encontro-do-xp-rio
 categories: 
   []
 tags:

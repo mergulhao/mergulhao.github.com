@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Rails 2: Foxy Fixtures não tem suporte a id!'
-disqus_id: /2008/1/13/rails-2-foxy-fixtures-no-tem-suporte-a-id
 categories: 
   []
 tags:

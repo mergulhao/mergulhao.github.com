@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Falta tempo! Eventos, eventos, eventos!'
-disqus_id: /2007/11/25/falta-tempo-eventos-eventos-eventos
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Deploy com Capistrano atualizado'
-disqus_id: /2007/10/11/deploy-com-capistrano-atualizado
 categories: 
   []
 tags:

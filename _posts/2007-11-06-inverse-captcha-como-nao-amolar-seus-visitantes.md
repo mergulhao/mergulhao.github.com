@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Inverse Captcha: como não amolar seus visitantes'
-disqus_id: /2007/11/6/inverse-captcha-como-nao-amolar-seus-visitantes
 categories: 
   []
 tags:

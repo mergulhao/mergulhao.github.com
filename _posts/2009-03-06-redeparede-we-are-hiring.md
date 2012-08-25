@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Redeparede: we are hiring!'
-disqus_id: /2009/3/6/redeparede-we-are-hiring
 categories:
   []
 tags:

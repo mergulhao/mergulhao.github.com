@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Meu primeiro TDD'
-disqus_id: /2007/7/30/meu-primeiro-tdd
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Dreamhost deploy com capistrano'
-disqus_id: /2007/9/3/dreamhost-deploy-com-capistrano
 categories: 
   []
 tags:

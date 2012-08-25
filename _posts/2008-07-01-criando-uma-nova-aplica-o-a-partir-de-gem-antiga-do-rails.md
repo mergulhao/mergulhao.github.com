@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Criando uma nova aplicação a partir de gem antiga do Rails'
-disqus_id: /2008/7/1/criando-uma-nova-aplica-o-a-partir-de-gem-antiga-do-rails
 categories: 
   []
 tags:

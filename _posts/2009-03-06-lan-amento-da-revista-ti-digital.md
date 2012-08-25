@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Lançamento da Revista TI Digital'
-disqus_id: /2009/3/6/lan-amento-da-revista-ti-digital
 categories: 
   []
 tags:

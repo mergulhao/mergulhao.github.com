@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Inscrições abertas para o V Fórum de Software Livre'
-disqus_id: /2007/9/21/inscricoes-abertas-para-o-v-forum-de-software-livre
 categories: 
   []
 tags:

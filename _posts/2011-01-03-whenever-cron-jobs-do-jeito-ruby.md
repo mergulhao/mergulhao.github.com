@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Whenever - Cron Jobs do jeito Ruby'
-disqus_id: /2011/1/3/whenever-cron-jobs-do-jeito-ruby
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Um pouco de migrações - Rails migrations'
-disqus_id: /2007/6/3/um-pouco-de-migracoes
 categories: 
   []
 tags:

@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Usando o plugin contacts para baixar os contatos de seus usuários'
-disqus_id: /2009/3/27/usando-o-plugin-contacts-para-baixar-os-contatos-de-seus-usu-rios
 categories: 
   []
 tags:

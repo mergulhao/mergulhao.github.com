@@ -1,7 +1,6 @@
 --- 
 layout: post
 title: 'Geeks on a Plane no Rio!'
-disqus_id: /2011/5/2/geeks-on-a-plane-no-rio
 categories: 
   []
 tags:
