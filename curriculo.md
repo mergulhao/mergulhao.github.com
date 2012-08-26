@@ -2,6 +2,7 @@
 layout: default
 title: 'Currículo'
 permalink: "/sobre/curriculo/index.html"
+published: false
 ---
 
 
