@@ -29,7 +29,7 @@ Ou seja: ele tenta impor restrições ao uso da licença open source(LGPL), o qu
 
 [Download também aqui][download].
 
-[download]: http://mergulhao.info/assets/2008/4/29/ore.extjs-2.0.2-py2.5.egg
+[download]: http://mergulhao.info/assets/images/2008/4/29/ore.extjs-2.0.2-py2.5.egg
 [post]: http://www.alittlemadness.com/2008/04/24/ext-discovers-step-2-of-the-slashdot-business-model
 [extjs]: http://pypi.python.org/pypi/ore.extjs/2.0.2
 [ext]: http://extjs.com/

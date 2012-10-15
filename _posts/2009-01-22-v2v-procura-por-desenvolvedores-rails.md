@@ -5,7 +5,7 @@ categories:
   []
 tags:
   - oportunidades
-image: http://mergulhao.info/assets/2009/1/22/v2v-logo.png
+image: http://mergulhao.info/assets/images/2009/1/22/v2v-logo.png
 ---
 
 O [Portal do Voluntário][pv] é um projeto que incentiva ações de voluntariado no âmbito nacional. Lá foi desenvolvida uma rede social chamada [V2V][]. Inicialmente era um projeto em php, sem testes e difícil de manter. Quando eu saí do [Lucidus][], o [Fernando][] me convidou para integrar a equipe dele e iniciar o desenvolvimento da nova versão do [V2V][], utilizando Rails e todas as boas práticas de desenvolvimento, testes etc.

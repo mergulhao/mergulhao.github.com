@@ -120,7 +120,7 @@ Espero que possa ser útil para alguém! Se precisarem de uma estrutura que se p
 
 Os arquivos desse artigo podem ser baixados aqui: 
 
-[http://mergulhao.info/assets/2008/8/22/betternestedset.tgz](http://mergulhao.info/assets/2008/8/22/betternestedset.tgz)
+[http://mergulhao.info/assets/images/2008/8/22/betternestedset.tgz](http://mergulhao.info/assets/images/2008/8/22/betternestedset.tgz)
 
 [lucidus]: http://www.rioonrails.com.br/speeches/projeto-lucidus
 [cn]: http://en.wikipedia.org/wiki/Natural_key

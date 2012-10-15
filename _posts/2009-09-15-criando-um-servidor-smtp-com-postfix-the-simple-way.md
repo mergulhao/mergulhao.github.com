@@ -72,7 +72,7 @@ O SPF é uma entrada TXT no DNS que diz quais servidores estão autorizados a en
 Nós queríamos a configuração mais simples de todas. O que conseguimos foi fazer o postfix autenticar usando a própria base de usuários/senhas do sistema. Para simplificar as coisas eu fiz um script que executa os passos em sequencia. Baixe e execute como root num servidor limpo. Foi testado apenas no Ubuntu 9.04 (Jaunty Jackalope).
 
 <code>
-<a href="http://mergulhao.info/assets/2009/9/15/install_and_configure_postfix_ubuntu.sh">install\_and\_configure\_postfix\_ubuntu.sh</a>
+<a href="http://mergulhao.info/assets/images/2009/9/15/install_and_configure_postfix_ubuntu.sh">install\_and\_configure\_postfix\_ubuntu.sh</a>
 </code>
 
 Primeiro vai pedir o seu domínio. Assumi que o servidor será smtp.seudominio.com, se não for esse o seu desejo, edite o script e mude na mão. Na instalação do postfix ele vai perguntar algumas coisas, basta selecionar as opções padrão. Depois vai perguntar sobre chaves, isso faz parte da criptografia TLS. Eu não sei se essas senhas que digitamos na chave servem pra alguma coisa. Na dúvida anote-as em algum lugar, mas acho que não vai precisar delas pra mais nada. Quando o script terminar de rodar tudo já vai estar configurado e funcionando! Abra um cliente de e-mail como o Evolution e teste enviar um e-mail autenticando no seu novo servidor usando login e senha de algum usuário do sistema.

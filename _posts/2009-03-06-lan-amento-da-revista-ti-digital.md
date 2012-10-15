@@ -6,7 +6,7 @@ categories:
 tags:
   - rails
   - eventos
-image: http://mergulhao.info/assets/2009/3/6/tidigital00.jpg
+image: http://mergulhao.info/assets/images/2009/3/6/tidigital00.jpg
 ---
 
 Ontem na Livraria da Travessa, centro do Rio, foi o lançamento da [Revista TI Digital][revista] de autoria da [Arteccom][ac]. A mesma do [Encontro de TI][eti], do [Encontro de Webdesign][ewd] e da [Revista Webdesign][revistad].
@@ -19,13 +19,13 @@ Compre na banca mais próxima de você!
 
 <ul class="thumbnails pull-right">
   <li class="span3">
-    <a href="http://mergulhao.info/assets/2009/3/6/3333922316_7ee34fc555.jpg" class="thumbnail">
-      <img src="http://mergulhao.info/assets/2009/3/6/3333922316_7ee34fc555.jpg" alt="{{ page.title }}">
+    <a href="http://mergulhao.info/assets/images/2009/3/6/3333922316_7ee34fc555.jpg" class="thumbnail">
+      <img src="http://mergulhao.info/assets/images/2009/3/6/3333922316_7ee34fc555.jpg" alt="{{ page.title }}">
     </a>
   </li>
   <li class="span3">
-    <a href="http://mergulhao.info/assets/2009/3/6/3333931954_4f3bda0d67.jpg" class="thumbnail">
-      <img src="http://mergulhao.info/assets/2009/3/6/3333931954_4f3bda0d67.jpg" alt="{{ page.title }}">
+    <a href="http://mergulhao.info/assets/images/2009/3/6/3333931954_4f3bda0d67.jpg" class="thumbnail">
+      <img src="http://mergulhao.info/assets/images/2009/3/6/3333931954_4f3bda0d67.jpg" alt="{{ page.title }}">
     </a>
   </li>
 </ul>

@@ -5,7 +5,7 @@ categories:
   []
 tags:
   []
-image: http://mergulhao.info/assets/2008/12/15/logo_hostnet.gif
+image: http://mergulhao.info/assets/images/2008/12/15/logo_hostnet.gif
 ---
 
 A promoção

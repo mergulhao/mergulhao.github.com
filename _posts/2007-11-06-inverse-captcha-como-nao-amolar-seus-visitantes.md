@@ -18,7 +18,7 @@ A questão é: como minimamente garantir que há um humano postando o formulári
 
 Fazendo o oposto do [Captcha][cap], o conceito do Inverse(ou Negative) Captcha não é fazer o nosso visitante se identificar como humano, mas fazer o [bot][bot] se entregar. Como? Fazendo [a coisa mais simples com chances de funcionar](http://c2.com/xp/DoTheSimplestThingThatCouldPossiblyWork.html). Dentro do formulário há um campo _hidden_ via css. Os [bots][bot] vêem esses campos como _inputs_ comuns, pois eles não interpretam o css. O humano(ou os leitores de tela) ignoram esse campo, pois ele não aparece na tela. Logo, basta ignorar qualquer submissão que vier com o campo _hidden_ preenchido.
 
-<div class="center"><img src="http://mergulhao.info/assets/2007/11/6/inverse_captcha.png" alt="Invese Captcha" /></div>
+<div class="center"><img src="http://mergulhao.info/assets/images/2007/11/6/inverse_captcha.png" alt="Invese Captcha" /></div>
 
 Utilizei o [plug-in para Mephisto][pi] desenvolvido pelo [Sven Fuchs][sf] que implementa essa solução. Simples, não? Vamos ver se funciona.
 

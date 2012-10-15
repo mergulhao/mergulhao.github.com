@@ -5,7 +5,7 @@ categories:
   []
 tags:
   - divagando
-image: http://mergulhao.info/assets/2009/12/8/112342184_99652d174d.jpg
+image: http://mergulhao.info/assets/images/2009/12/8/112342184_99652d174d.jpg
 ---
 
 Quantas vezes você já não foi forçado a fazer uma coisa do jeito que *seria* mais rápido, pois seu chefe achou que o jeito que demora mais não seria uma boa? As vezes me esqueço em como é comum superiores, gerentes, analistas ou "coloque\-aqui\-qualquer\-nome\-que\-manda\-mais\-que\-você\-na\-empresa" darem pitaco no seu trabalho sem saber exatamente do que estão falando. 

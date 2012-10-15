@@ -7,7 +7,7 @@ tags:
   - rails
   - divagando
   - xp
-image: http://mergulhao.info/assets/2008/1/12/invente_menos_problemas_1.jpg
+image: http://mergulhao.info/assets/images/2008/1/12/invente_menos_problemas_1.jpg
 ---
 
 O [açucar União][uniao] está com uma campanha publicitária chamada **Viva Momentos de União**, que possui mensagens que fazem alusão a situações de prazer e bem-estar, realçando a importancia da qualidade de vida e tudo mais. Não se preocupem, não vou escrever sobre açucar!

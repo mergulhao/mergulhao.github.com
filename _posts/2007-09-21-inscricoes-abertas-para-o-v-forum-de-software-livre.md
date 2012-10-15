@@ -5,7 +5,7 @@ categories:
   []
 tags:
   - eventos
-image: http://mergulhao.info/assets/2007/9/21/vforum.gif
+image: http://mergulhao.info/assets/images/2007/9/21/vforum.gif
 ---
 
 Atenção pessoal! Estão abertas as inscrições para o V Fórum de Software Livre do Rio de Janeiro. Para se inscrever visite o [site](http://www.forumsoftwarelivre.org.br/) e abra o menu correspondente. A inscrição para participação nas palestras e circulação na área do evento é __GRATUITA__. Os minicursos são cobrados com desconto para estudantes e servidores públicos.

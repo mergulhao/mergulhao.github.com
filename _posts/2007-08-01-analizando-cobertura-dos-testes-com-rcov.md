@@ -53,12 +53,12 @@ Agora basta entrar no diretório do seu projeto em Rails e digitar:
 Será gerado dentro do diretório _/doc/coverage_ o relatório de cobertura dos testes. E não é eu fui bem pra minha surpresa? Resultado: 100% testado! Que venham os próximos testes!
 
 <p style="text-align: center;">
-<a href="http://www.mergulhao.info/assets/2007/8/1/cobertura_rcov.png">
-<img src="http://www.mergulhao.info/assets/2007/8/1/cobertura_rcov.png" alt="Resultado cobertura rcov" width="500" height="348" />
+<a href="http://www.mergulhao.info/assets/images/2007/8/1/cobertura_rcov.png">
+<img src="http://www.mergulhao.info/assets/images/2007/8/1/cobertura_rcov.png" alt="Resultado cobertura rcov" width="500" height="348" />
 </a>
 </p>
 
-[cobertura_rcov]: http://www.mergulhao.info/assets/2007/8/1/cobertura_rcov.png
+[cobertura_rcov]: http://www.mergulhao.info/assets/images/2007/8/1/cobertura_rcov.png
 [forumsl]: http://www.forumsoftwarelivre.org.br
 [improveit]: http://www.improveit.com.br/xp/praticas/tdd/rcov
 

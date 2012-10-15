@@ -15,7 +15,7 @@ Agradeço ao [Ozéias Sant’ana][rbox] e ao [Davis Cabral][davis] pelo convite.
 
 Confiram o link original do [podcast][rbox4] e faça o [download][rbox4_download].
 
-[rbox4_download]: http://mergulhao.info/assets/2008/9/29/railsbox_4.mp3
+[rbox4_download]: http://mergulhao.info/assets/images/2008/9/29/railsbox_4.mp3
 [rbox4]: http://railsbox.org/2008/9/29/railsbox-podcast-4
 [rafaelcaceres]: http://blog.rafaelcaceres.net/
 [rbox]: http://railsbox.org/

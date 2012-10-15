@@ -7,7 +7,7 @@ tags:
   - xp
   - projetos
   - divagando
-image: http://mergulhao.info/assets/2008/3/26/lucidus.png
+image: http://mergulhao.info/assets/images/2008/3/26/lucidus.png
 ---
 
 Pela falta de tempo [estou um pouco atrasado][atrasado], mas ainda em tempo. Desde novembro do ano passsado -- passou muito rápido -- tenho trabalhado fulltime no [Lucidus][lucidus]. Todos [os agradecimentos necessários foram feitos][atrasado], então resta ressaltar a importancia deste projeto para mim, como desenvolvedor, profissional, pessoa.

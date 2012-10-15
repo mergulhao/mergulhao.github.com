@@ -14,7 +14,7 @@ Há algum tempo eu procurava um programa gráfico para fazer diff em arquivos de
 Hoje pesquisando no [__freshmeat.net__][freshmeat] encontrei um para Gnome! É o [__Meld__][meld]. Não tem pacote para Ubuntu, mas tem para [__Debian__][debian], e aqui funcionou muito bem. Fica a dica para quem precisar. O screenshot aí abaixo está comparando dois arquivos de folha de estilo.
 
 <p style="text-align: center;">
-<img alt="Screenshot Meld" src="http://mergulhao.info/assets/2007/6/6/meld.png"/>
+<img alt="Screenshot Meld" src="http://mergulhao.info/assets/images/2007/6/6/meld.png"/>
 </p>
 
 [eclipse]: http://www.eclipse.org

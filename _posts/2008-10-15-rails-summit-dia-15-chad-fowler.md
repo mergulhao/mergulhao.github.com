@@ -7,7 +7,7 @@ tags:
   - rails
   - eventos
   - railssummit
-image: http://mergulhao.info/assets/2008/10/15/img_0995_1.jpg
+image: http://mergulhao.info/assets/images/2008/10/15/img_0995_1.jpg
 ---
 
 Chad Fowler falou bastante sobre como se promover no mercado como desenvolvedor. Ele fez analogia comparando o desenvolvedor com produtos, mas não de maneira negativa. Apenas informando que o desenvolvedor deve saber se apresentar para o mercado, fazer barulho para se mostrar, fazer marketing pessoal. É uma coisa que muitos desenvolvedores não gostam de fazer, mas é necessário se você quer crescer como profissional. Um dos exemplos dados por ele foi o de um funcionário que sabe desenvolver 5 vezes mais rápido que qualquer um da equipe de desenvolvimento, mas não fala isso pra ninguém e continua trabalhando com suporte.

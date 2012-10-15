@@ -6,7 +6,7 @@ categories:
 tags:
   - redeparede
   - oportunidades
-image: http://mergulhao.info/assets/2009/1/4/redeparede.gif
+image: http://mergulhao.info/assets/images/2009/1/4/redeparede.gif
 ---
 
 Sim é verdade! Estamos em busca de pessoas para trabalhar conosco, em nossa pequena, descentralizada, multidisciplinar e multilingue equipe! Atualmente nosso time é composto por duas pessoas nos EUA, uma na argentina e três no Brasil. Estamos passando por uma incrível fase de crecimento. Em novembro passado tivemos 1,5 milhões acessos. Fechamos fevereiro com 3,5 milhões de acessos e 7,5 milhões de pageviews. Quase 1/3 desses acessos são do Brasil. São números surpreendentes!
