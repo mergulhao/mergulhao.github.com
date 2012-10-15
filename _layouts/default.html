@@ -2,39 +2,41 @@
 <html>
 {% include head.html %}
 <body>
-  <div id="page">
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">mergulhao.info</a>
-          <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
-            <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
-            <input type="hidden" name="cof" value="FORID:0" />
-            <input name="q" class="search-query" type="text" placeholder="buscar por..." />
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="container main-content-container">
+  <article>
+    <header>
       {% if page.home == true %}
-        {% include profile.html %}
+        <h1>mergulhao.info</h1>
+      {% else %}
+        <a id="brand" href="/">mergulhao.info</a>
       {% endif %}
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+    </header>
+    <hr />
+    {% if page.home == true %}
+      {% include profile.html %}
+    {% endif %}
+    <section role="main">
       <div class="row">
         <div class="span12 main-content">
           {{ content }}
         </div>
       </div>
-      {% unless page.home == true %}
-        {% include profile.html %}
-      {% endunless %}
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <p class="pull-right"><a href="#">Topo</a></p>
-        <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="nofollow">@smergulhao</a>.</p>
-        <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="nofollow">Brasil</a>.
-      </div>
+    </section>
+    {% unless page.home == true %}
+      {% include profile.html %}
+    {% endunless %}
+    <hr />
+    <footer>
+      <p>Copyright &copy; 2012 mergulhao.info.</p>
+		  <p id="go-to-top"><a href="#">Topo</a></p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="nofollow">Brasil</a>.</p>
     </footer>
-  </div>
+  </article>
 </body>
 </html>
