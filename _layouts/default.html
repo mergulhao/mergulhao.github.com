@@ -15,11 +15,15 @@
         <input type="hidden" name="cof" value="FORID:0" />
         <input name="q" class="search-query" type="text" placeholder="buscar por..." />
       </form>
+
+      <p>Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
     </header>
     <hr />
-    {% if page.home == true %}
-      {% include profile.html %}
-    {% endif %}
     <section role="main">
       <div class="row">
         <div class="span12 main-content">
@@ -27,15 +31,12 @@
         </div>
       </div>
     </section>
-    {% unless page.home == true %}
-      {% include profile.html %}
-    {% endunless %}
     <hr />
     <footer>
-      <p>Copyright &copy; 2012 mergulhao.info.</p>
-		  <p id="go-to-top"><a href="#">Topo</a></p>
-      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="nofollow">@smergulhao</a>.</p>
-      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="nofollow">Brasil</a>.</p>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
     </footer>
   </article>
 </body>
