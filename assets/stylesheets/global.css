@@ -9,11 +9,11 @@ body {
 }
 
 a, a:active, a:visited {
-  color: #897040;
+  color: #FC9797;
 }
 
 a:hover {
-  color: #033649;
+  color: #F97575;
   text-decoration: underline;
 }
 
@@ -27,9 +27,22 @@ p {
 header {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
   width: 240px;
   padding: 20px;
+  background-color: #363636;
+  border-right: 5px solid #333;
+  -moz-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
+  -webkit-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
+  -ms-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
+  -o-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
+  box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
+  color: #fff;
+}
+
+header hgroup {
+  margin: 0 0 1em;
 }
 
 header hgroup h1 {
@@ -39,17 +52,17 @@ header hgroup h1 {
 
 header hgroup h2 {
   font-style: italic;
-  color: #696969;
+  color: #ccc;
 }
 
 header a#brand,
 header a#brand:active,
 header a#brand:visited {
-  color: #333;
+  color: #fff;
 }
 
 header a#brand:hover {
-  color: #333;
+  color: #fff;
   text-decoration: none;
   opacity: .8;
 }
@@ -59,9 +72,90 @@ header a#brand:hover {
 section[role="main"] {
   margin-left: 300px;
   padding: 20px 40px;
-  border-left: 1px dotted #e9e9e9;
-  border-left: 1px dotted rgba(0,0,0,.1);
+  font-size: 1.2em;
   width: 50%;
+}
+
+section[role="main"] a {
+  color: #B00;
+}
+
+section[role="main"] a:hover {
+  color: #900;
+}
+
+section[role="main"] hgroup h1,
+section[role="main"] hgroup h2 a {
+  font-size: 2.2em;
+  font-family: 'Raleway', Helvetica, Arial, Sans-Serif;
+  font-weight: 200;
+  letter-spacing: -1px;
+  color: #900;
+}
+
+section[role="main"] hgroup h2 a {
+  font-size: 1.4em;
+}
+
+section[role="main"] hgroup h1 + h2,
+section[role="main"] hgroup h3 {
+  color: #696969;
+  font-size: .8em;
+  font-style: italic;
+}
+
+section[role="main"] .tags {
+  margin: 0 0 2.5em;
+}
+
+section[role="main"] .tags a {
+  margin: 0 .5em 0 0;
+  padding: 5px 10px;
+  background: #fff;
+  font-size: .8em;
+  border: 1px solid #FC9797;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+section[role="main"] .tags a:hover {
+  border: 1px solid #900;
+  text-decoration: none;
+}
+
+#post-image {
+  margin: 1.4em 0 0;
+  text-align: center;
+}
+
+#post-image a {
+  margin: auto;
+  display: inline-block;
+}
+
+/* FORMS */
+
+.search-query {
+  width: 100%;
+  background: #fff url(/assets/images/magnifying-glass.png) no-repeat center right;
+  padding: 6px 10px;
+  border: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  font-size: .9em;
+}
+
+.search-query:focus {
+  -moz-box-shadow: 0 0 15px rgba(255,255,255,.6);
+  -webkit-box-shadow: 0 0 15px rgba(255,255,255,.6);
+  -ms-box-shadow: 0 0 15px rgba(255,255,255,.6);
+  -o-box-shadow: 0 0 15px rgba(255,255,255,.6);
+  box-shadow: 0 0 15px rgba(255,255,255,.6);
 }
 
 /* FOOTER */
@@ -77,19 +171,18 @@ section[role="main"] {
   font-weight: bold;
   text-align: center;
   background: #fff;
-  color: #033649;
-  border: 1px solid #033649;
+  color: #363636;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 
 #go-to-top a:hover {
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
-  -ms-box-shadow: 0 0 10px rgba(0,0,0,.4);
-  -o-box-shadow: 0 0 10px rgba(0,0,0,.4);
-  box-shadow: 0 0 10px rgba(0,0,0,.4);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,.8);
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.8);
+  -ms-box-shadow: 0 0 20px rgba(0,0,0,.8);
+  -o-box-shadow: 0 0 20px rgba(0,0,0,.8);
+  box-shadow: 0 0 20px rgba(0,0,0,.8);
   text-decoration: none;
 }
 
@@ -99,8 +192,8 @@ footer {
   left: 0;
   width: 240px;
   padding: 20px;
-  font-size: .8em;
-  color: #696969;
+  font-size: .9em;
+  color: #fff;
 }
 
 footer p {
@@ -109,8 +202,41 @@ footer p {
 
 footer p#copy {
   padding: 1em 0;
-  border-bottom: 1px dotted #e9e9e9;
-  border-bottom: 1px dotted rgba(0,0,0,.1);
+  border-bottom: 1px dotted #696969;
   font-size: .9em;
-  color: #333;
+  color: #ccc;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 760px) {
+  body {
+    -webkit-text-size-adjust: none;
+    font-size: 75%;
+  }
+
+  header,
+  footer {
+    width: 200px;
+  }
+
+  section[role="main"] {
+    margin-left: 260px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    padding: 20px 60px 20px 20px;
+  }
+
+  section[role="main"] {
+    margin-left: 340px;
+  }
+}
+
+@media only screen and (min-width: 1290px) {
+  section[role="main"] {
+    width: 40%;
+  }
 }
