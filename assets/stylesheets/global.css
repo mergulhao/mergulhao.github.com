@@ -42,7 +42,7 @@ header {
 }
 
 header hgroup {
-  margin: 0 0 1em;
+  margin: 0 0 2em;
 }
 
 header hgroup h1 {
@@ -65,6 +65,42 @@ header a#brand:hover {
   color: #fff;
   text-decoration: none;
   opacity: .8;
+}
+
+header p#about img {
+  margin: 0 1em 0 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  float: left;
+}
+
+header ul li {
+  padding: .5em 0 0 2em;
+}
+
+header ul li a {
+  display: block;
+  text-indent: -9999px;
+}
+
+header ul li a:hover {
+  opacity: .8;
+}
+
+header ul li a#startupdev-link {
+  display: block;
+  width: 180px;
+  height: 35px;
+  background: transparent url(/assets/images/logo-startupdev.png) no-repeat 0 0;
+}
+
+header ul li a#helabs-link {
+  display: block;
+  width: 140px;
+  height: 49px;
+  background: transparent url(/assets/images/logo-helabs.png) no-repeat 0 0;
 }
 
 /* SECTION */
@@ -167,7 +203,7 @@ section[role="main"] .tags a:hover {
 #go-to-top a {
   display: block;
   width: 80px;
-  padding: 10px 0;
+  padding: 8px 0;
   font-weight: bold;
   text-align: center;
   background: #fff;
@@ -201,7 +237,7 @@ footer p {
 }
 
 footer p#copy {
-  padding: 1em 0;
+  padding: .5em 0 1em;
   border-bottom: 1px dotted #696969;
   font-size: .9em;
   color: #ccc;
@@ -213,6 +249,14 @@ footer p#copy {
   body {
     -webkit-text-size-adjust: none;
     font-size: 75%;
+  }
+
+  header p#about img {
+    width: 48px;
+  }
+
+  header ul li {
+    padding: .5em 0 0 0;
   }
 
   header,
