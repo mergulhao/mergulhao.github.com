@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Colecionar débitos técnicos não é maneiro não &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Colecionar débitos técnicos não é maneiro não</h1>
+  <h2>Postado em 17/08/2009</h2>
+</hgroup>
+
+
+
+<p>Depois de um tempo sem postar, lá vamos nós de novo ;). Quem assina o feed provavelmente recebeu uma atualização sobre esse post antes do que devia! Eu esqueci de marcar ele como rascunho e aí ficou a manhã toda o post publicado apenas com um smile. Depois do furo não tive outra opção a não ser escrever o post até o final o mais rápido possível.</p>
+
+<p>Após participar de inúmeros projetos e de formas de gerencia sobre os projetos tenho chegado a algumas conclusões sobre a questão dos débitos técnicos, refatoração e testes.</p>
+
+<p>No começo do V2V, projeto do <a href='http://portaldovoluntario.org.br'>Portal do Voluntário</a>, muito código novo foi escrito em cima de um código que usamos como base. Toda alteração de código era devidamente testada usando Rspec. Por considerar que alguns testes não eram muito importantes, as vezes eu deixava a spec como pending para fazer uma posterior implementação. Assim podia entregar as coisas um pouco mais rápido. De fato isso aconteceu em apenas uma meia dúzia de specs, ainda bem!</p>
+
+<p>O fato é que hoje, 9 meses depois do sistema estar em produção, e já com 3 grandes clientes utilizando &#8211; rumando para o quarto &#8211; a mesma meia dúzia de specs continuam como pending.</p>
+
+<p>Esse quadro é comum acontecer também em relação aos débitos técnicos dos projetos. O que é um débito técnico? É um empréstimo que você faz, inserindo alguma coisa mal feita no sistema &#8211; leia-se <a href='http://desciclo.pedia.ws/wiki/POG'>POG</a> &#8211; com objetivo de ganhar um pouco de tempo naquele momento. É um empréstimo pois ele pode ser comparado ao empréstimo bancário. Você pega um dinheirinho e aquilo tem um juros. Quanto mais tempo você leva pra devolver aquele dinheiro pro banco mais você paga de juros. No nosso caso quanto mais tempo levamos para remover os débitos técnicos mais tempo perdemos por causa dele.</p>
+
+<p>Assim como as minhas 6 specs pendentes, é comum que débitos técnicos se prolonguem por toda a vida do projeto causando muito mais transtornos do que seria corrigi-los na época em que isso faria atrasar a entrega em apenas um dia.</p>
+
+<p>Em alguns dos projetos que trabalhei às vezes separávamos uma semana para &#8220;arrumar a casa&#8221;. Ou seja: quitar os débitos técnicos que foram se criando com objetivo de fazer entregas mais rápidas. Uma semana de projeto no lixo sem nenhuma funcionalidade nova! Essa não é a forma correta de fazer.</p>
+
+<p>Se você estimou o desenvolvimento de uma funcionalidade em uma hora e tem um débito técnico te atrapalhando que vai fazer você demorar duas horas a mais para quitá-lo, essa é a hora de quitá-lo. Não faça mais uma <a href='http://desciclo.pedia.ws/wiki/POG'>POG</a>! Pegar mais um empréstimo nessa hora vai fazer você pagar juros sobre juros e isso irá te atrapalhar mais na semana seguinte.</p>
+
+<p>A refatoração é um processo contínuo e <em>on the fly</em>.</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#xp">xp</a>
+  
+    <a href="/tags/#rspec">rspec</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2009/8/17/colecionar-d-bitos-t-cnicos-n-o-maneiro-n-o/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dreamhost deploy com capistrano &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Dreamhost deploy com capistrano</h1>
+  <h2>Postado em 03/09/2007</h2>
+</hgroup>
+
+
+
+<p>Realmente o capistrano me surpreendeu bastante pela utilidade e facilidade de uso. Assim que possível vou passar a realizar deploy de todos os meus sistemas/sites/etc que estão rodando na web utilizando ele &#8212; inclusive os que não rodam em Rails! O teste dessa vez foi no <a href='/projetos'>sistema de inscrições do Fórum de Software Livre</a> desse ano. Quem quiser testar para ver como está ficando e sugerir mudanças acessar: <a href='http://inscricao.mergulhao.info'>http://inscricao.mergulhao.info</a>.</p>
+
+<p>Deixo aqui um passo a passo para quem quer fazer deploy de uma aplicação utilizando <a href='http://www.capify.org'>Capistrano</a> e o <a href='http://www.dreamhost.com'>Dreamhost</a> (pode facilmente ser adaptado para outros hosts). Antes de tudo, <a href='http://www.capify.org/install'>instale o capistrano</a>. Caso não esteja utilizando o <a href='http://www.dreamhost.com'>Dreamhost</a>, certifique-se que o seu servidor possui o <a href='http://subversion.tigris.org/'>svn</a> cliente de linha de comando instalado.</p>
+
+<p><strong>ATENÇÃO: Todos os comandos aqui listados são executados em seu ambiente local de desenvolvimento.</strong></p>
+
+<ol>
+<li>
+<p>Crie um subdomínio/domínio no painel de controle do Dreamhost, habilite o fastcgi e aponte o diretório web para algo semelhante:</p>
+
+<p>/home/USUARIO/sistema.dominio.com/current/public</p>
+</li>
+
+<li>
+<p>Acesse a sua conta via ssh e apague o diretório <em>current</em> que foi criado pelo Dreamhost em <em>/home/USUARIO/sistema.dominio.com/</em></p>
+</li>
+
+<li>
+<p>Siga <a href='http://wiki.dreamhost.com/SSH#Passwordless_Login'>esses passos</a> se desejar efetuar o deploy sem a necessidade de digitar a senha do ssh a todo momento.</p>
+</li>
+
+<li>
+<p>Configure seu <em>config/enviroment.rb</em> para modo produção e o <em>config/database.yml</em> com a base de produção.</p>
+</li>
+
+<li>
+<p>Substitua seu <em>public/dispatch.fgci</em> por esse(dica pega do <a href='http://blog.klaus.pro.br/ler/ruby-on-rails/2007/ruby-on-rails-na-dreamhost/7/index.html'>Klaus</a>):</p>
+</li>
+</ol>
+<pre><code>
+#!/usr/bin/ruby1.8
+require File.dirname(__FILE__) + "/../config/environment"
+require 'fcgi_handler'
+
+class RailsFCGIHandler
+  private
+    def frao_handler(signal)
+      dispatcher_log :info, "asked to terminate immediately"
+      dispatcher_log :info, "frao handler working its magic!"
+      restart_handler(signal)
+    end
+  alias_method :exit_now_handler, :frao_handler
+end
+
+RailsFCGIHandler.process! nil, 6
+</code></pre>
+<ol>
+<li>Configure seu <em>public/.htaccess</em> de acordo, substituindo a linha:</li>
+</ol>
+<pre><code>
+RewriteRule ^(.*)$ dispatch.cgi [QSA,L]
+</code></pre>
+<p>Por:</p>
+<pre><code>
+RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
+</code></pre>
+<ol>
+<li>
+<p>Rode o capify no diretório de desenvolvimento da sua aplicação:</p>
+
+<p>capify .</p>
+</li>
+
+<li>
+<p>Utilize a receita abaixo(_config/deploy.rb_) configurando-a de acordo:</p>
+</li>
+</ol>
+<pre><code>
+# Receita de deploy de apps Rails para o Dreamhost. Capistrano V2.
+# Pode ser facilmente adaptada para outros hosts compartilhados.
+# Por Sylvestre Mergulhao em 20/08/2007
+# Email: contato (at) mergulhao.info
+# Site: http://mergulhao.info
+
+# Define o nome da aplicacao e o dominio a qual estara linkada no dreamhost
+set :application, "inscricao.mergulhao.info"
+
+# Define seu usuario no dreamhost
+set :user, "mergulhao"
+
+# Define o local do seu repositorio svn
+set :repository,  "http://mergulhao.info/inscricao/trunk"
+
+# Nao precisa ser  alterado daqui pra baixo!
+
+set :use_sudo, false
+set :deploy_to, "/home/#{user}/#{application}"
+set :domain, "#{user}@#{application}"
+
+role :app, domain
+role :web, domain
+role :db,  domain, :primary => true
+
+namespace :deploy do
+  desc "Restarts all FCGI processes."
+  task :restart, :roles => :app do
+    # NOTA: Segundo o reaper a opcao --dispatcher esta depreciada, verificar
+    # outra solucao.
+    run "#{current_path}/script/process/reaper --dispatcher=dispatch.fcgi"
+  end
+end
+</code>
+</pre>
+<ol>
+<li>
+<p>Faça commit de tudo pro svn.</p>
+</li>
+
+<li>
+<p>Rode o setup e verifique se não ocorre nenhum erro. Esse comando somente precisa ser executado no primeiro deploy. Ele é responsável por criar a estrutura de diretórios necessária no servidor.</p>
+
+<p>cap deploy:setup</p>
+</li>
+
+<li>
+<p>Rode o deploy com as migrações:</p>
+
+<p>cap deploy:migrations</p>
+</li>
+</ol>
+
+<p>Para executar os próximos deploys basta executar:</p>
+
+<pre><code>cap deploy</code></pre>
+
+<p>Se existirem migrações para realizar:</p>
+
+<pre><code>cap deploy:migrations</code></pre>
+
+<p>Se eu não esqueci de colocar nenhum passo e deu tudo certo, sua aplicação estará no ar. É claro que estamos seguindo aqui algumas convenções, como estar utilizando svn para controle de versões. Espero que seja útil, estou aberto a receber o feedback sobre isso, deixe-me saber se você utilizou essa receita com sucesso(e com fracasso também!).</p>
+
+<p>É isso!</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#rails">rails</a>
+  
+    <a href="/tags/#capistrano">capistrano</a>
+  
+    <a href="/tags/#deploy">deploy</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2007/9/3/dreamhost-deploy-com-capistrano/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

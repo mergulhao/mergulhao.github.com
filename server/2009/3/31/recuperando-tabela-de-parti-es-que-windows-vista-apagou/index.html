@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Recuperando tabela de partições que Windows Vista apagou &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Recuperando tabela de partições que Windows Vista apagou</h1>
+  <h2>Postado em 31/03/2009</h2>
+</hgroup>
+
+
+<div id="post-image">
+  <a href="http://mergulhao.info/assets/images/2009/3/31/harddisk.jpg" class="thumbnail">
+    <img src="http://mergulhao.info/assets/images/2009/3/31/harddisk.jpg" alt="Recuperando tabela de partições que Windows Vista apagou">
+  </a>
+</div>
+
+
+<p>Pensei no título desse post em algo como &#8220;Micro$oft, a saga continua agora em outra galáxia&#8221; ou algo assim, mas resolvi fazer uma coisa mais informativa. Sei que muita gente passa por isso e nem sempre é fácil achar informação válida sobre o assunto.</p>
+
+<p>Meu mais recente notebook veio com Windows Vista. Quando instalei Linux nele resolvi deixar o Vista lá para caso eu precisasse ver alguma coisa no IE. Ficou por alguns meses numa boa com o dual boot rolando sem problemas. Até que um dia eu precisei entrar no Windows ele não deu boot: tela azul e restarta sozinho sem que eu consiga ver a mensagem de erro. Deixei ele de lado lá&#8230;</p>
+
+<p>Hoje precisei usar IE para debugar um javascript que está dando problema somente nele. Resolvi colocar o CD de recovery do Windows para ver se ele dava sinal de vida. Conclusão sem me perguntar nada ele disse: formatando&#8230; copiando arquivos&#8230; Nisso eu pensei: puts ferrou! Dei reboot antes que ele passasse por cima das minhas partições Linux. Ubuntu Live CD to the rescue! Dei boot num Ubuntu Live CD e a &#8220;recuperação&#8221; de fato tinha apagado todas as partições e criado uma única novamente somente para o Windows. Ok, sem pânico.</p>
+
+<p>Última vez que passei por problema semelhante foi há uns 10 anos atrás, quando meu Windows foi infectado pelo vírus <a href='http://en.wikipedia.org/wiki/CIH_virus'>Chernobyl(CIH)</a>. Esse vírus ficava quietinho na sua máquina e somente agia se você ligasse ela num dia 26 de abril, <a href='http://en.wikipedia.org/wiki/Chernobyl_accident'>aniversário do acidente nuclear</a> na Ucrânia. Ele apagava o primeiro megabyte do seu disco rígido. Com isso ia pro espaço seu boot loader e sua tabela de partições. Depois desse dia eu exterminei o Windows da minha vida e passei a usar somente Linux.</p>
+
+<p>Google é nosso amigo. Na época eu consegui um software que varria o disco e procurava por partições perdidas e depois recriava a tabela de partições. Se eu consegui resolver esse mesmo problema há tanto tempo atrás, não devia ser tão dificil resolver nos dias de hoje. E realmente não foi. Achei dos programas de código aberto para fazer o trabalho: <a href='http://en.wikipedia.org/wiki/Gpart'>gpart</a> e <a href='http://www.cgsecurity.org/wiki/TestDisk'>TestDisk</a>.</p>
+
+<p>Eu optei por usar o <a href='http://www.cgsecurity.org/wiki/TestDisk'>TestDisk</a>, me pareceu ser mais completo. Ele demorou cerca de 30 minutos para fazer o scan no disco de 160gb. Detectou todas as minhas 3 partições Linux (swap, uma de sistema que fica no &#8221;/&#8221; e outra que uso como &#8220;/home&#8221;). Foi só marcar elas como primárias novamente e salvar a nova tabela de partições. É preciso dar um boot no Live CD para o sistema reler a tabela de partições (na verdade tem uma forma de fazer isso sem boot, mas eu esqueci como é). Por último é só <a href='https://help.ubuntu.com/community/RecoveringUbuntuAfterInstallingWindows'>restaurar o GRUB</a> a partir do Live CD do Ubuntu.</p>
+
+<p>Depois disso o Ubuntu apagado pelo Windows rolou numa boa e eu deixei o Windows de mão de novo. Ô sisteminha&#8230;</p>
+
+<p>Links legais:</p>
+
+<ul>
+<li><a href='http://www.cgsecurity.org/wiki/TestDisk'>TestDisk</a></li>
+
+<li>Site do <a href='http://www.cgsecurity.org/wiki/TestDisk'>TestDisk</a>. Eles também tem uma ferramenta específica para recuperação de fotografias em mídias diversas.</li>
+
+<li><a href='http://greenfly.org/talks/knoppix/rescue.html'>System Rescue with Knoppix</a></li>
+
+<li>Foi aqui que eu descobri o gpart. As <a href='http://greenfly.org/talks/'>outras apresentações</a> também são muito boas.</li>
+
+<li><a href='http://www.inside-security.de/insert_en.html'>Insert Linux</a></li>
+
+<li>Mini distro baseada no knoppix, com foco na resolução desses desastres. Ela já vem com o <a href='http://en.wikipedia.org/wiki/Gpart'>gpart</a> e <a href='http://www.cgsecurity.org/wiki/TestDisk'>TestDisk</a> instalados. No Ubuntu Live CD eu tive que instalar via apt-get(sim você pode instalar pacotes num boot de live cd do ubuntu, mas perde tudo após um reboot claro;)</li>
+</ul>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#linux">linux</a>
+  
+    <a href="/tags/#ferramentas">ferramentas</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2009/3/31/recuperando-tabela-de-parti-es-que-windows-vista-apagou/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

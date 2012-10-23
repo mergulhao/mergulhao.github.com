@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Processando emails recebidos no Rails com MailMan &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Processando emails recebidos no Rails com MailMan</h1>
+  <h2>Postado em 11/01/2011</h2>
+</hgroup>
+
+
+
+<p>Processar e-mails recebidos em um aplicativo Rails parece uma tarefa complicada. A maioria das soluções disponíveis atualmente envolve a configuração de um servidor de e-mail dedicado só para isso. Não parece ser uma boa idéia.</p>
+
+<p>Quem também acha isso é o Jonathan Rudenberg que junto com mais uma galera, desenvolveu no Ruby Summer of Code do ano passado, o Mailman. Um microframework para processamento de e-mails recebidos.</p>
+
+<p>A funcionalidade é bem simples. Resumindo, você configura uma caixa postal que o Mailman vai varrer e uma callback para ser executada para cada e-mail que corresponder ao critério que você estabelecer.</p>
+
+<p>Um exemplo simples:</p>
+
+<pre><code>require &#39;mailman&#39;
+Mailman::Application.run do
+  to &#39;post-%id%@blog.com&#39; do 
+    Post.find(params[:id]).comments &lt;&lt; Comment.create(:body =&gt; message)
+  end
+end</code></pre>
+
+<p>Mas vamos devagar. Começando pelo começo.</p>
+
+<p>Como sempre, no seu Gemfile inclua a gem do Mailman:</p>
+
+<pre><code>gem &#39;mailman&#39;, &#39;0.4.0&#39;</code></pre>
+
+<p>Execute o bundler:</p>
+
+<pre><code>bundle install</code></pre>
+
+<p>No seu Mailer, defina a callback a ser chamada para os e-mails recebidos:</p>
+
+<pre><code>class Mailer &lt; ActionMailer::Base
+  def receive(email)
+    # o seu código entra aqui
+  end
+end</code></pre>
+
+<p>Depois disso é necessário configurar o Mailman. Recomendamos a criação de um script (em script/mailman). Como abaixo:</p>
+
+<pre><code>#!/usr/bin/env ruby
+require File.expand_path(&#39;../../config/application&#39;, __FILE__)
+require &quot;mailman&quot;
+
+Mailman.config.poll_interval = 0
+Mailman.config.ignore_stdin = true
+Mailman.config.logger = Logger.new(&#39;log/mailman.log&#39;)
+Mailman.config.pop3 = {
+  :username =&gt; &#39;incoming@example.com&#39;,
+  :password =&gt; &#39;************&#39;,
+  :server   =&gt; &#39;pop.gmail.com&#39;,
+  :port     =&gt; 995,
+  :ssl      =&gt; true
+}
+
+Mailman::Application.run do
+  to &#39;dropbox+%domain%+%type%+%type_id%@%host%&#39; do
+    UserMailer.receive(message)
+  end
+end</code></pre>
+
+<p>Vamos analisar as configurações mais importantes:</p>
+
+<p><strong>Mailman.config.poll_interval</strong>: define de quanto em quanto tempo o Mailman deve executar. Nós vamos configurar o cron para executar o script/mailman periodicamente, então devemos setar essa configuração para zero. Assim ele vai executar apenas uma vez e sair.</p>
+
+<p><strong>Mailman.config.ignore__stdin</strong>: essa configuração serve para ignorar e-mails passados diretamente para o Mailman (como no comando: cat plain_message.eml | ruby script/mailman).</p>
+
+<p><strong>Mailman.config.logger</strong>: seta o arquivo onde você quer que o log seja salvo.</p>
+
+<p><strong>Mailman.config.pop3</strong>: configura o mailman para usar pop3 como receiver. O Mailman pode ser configurado para trabalhar com três receivers: pop3, standard input ou maildir (onde ele varre uma pasta local a espera de novas mensagens).</p>
+
+<p>No nosso caso estamos usando o Gmail através do Google Apps.</p>
+
+<p>Logo abaixo vem o método Mailman::Application.run, que é onde a mágica acontece.</p>
+
+<p>Nele nós podemos configurar o que, no linguajar do Mailman, são chamados de &#8216;rotas&#8217;. Uma rota consiste em um método ( to, from, cc, subject, body), uma string ou regex e um bloco.</p>
+
+<p>O método diz onde o Mailman vai procurar pela string ou regex, no nosso caso estamos procurando no campo &#8220;to&#8221; do e-mail. Todo e-mail cujo &#8220;to&#8221; bater com a string vai ser passada para o bloco. As partes do &#8220;to&#8221; que forem capturadas pelo parte %domain%, por exemplo, estará disponível no bloco como params[:domain]. A mensagem então é passada para o método receive do Mailer.</p>
+
+<p>Agora, com o script pronto, precisamos nos assegurar que ele rode regularmente no servidor. Para isso existe o Cron, e nós usaremos o Whenever para agendar a execução do script/mailman.</p>
+
+<p>Adicione essas linhas no seu schedule.rb:</p>
+
+<pre><code>job_type :command, &quot;cd :path &amp;&amp; :task :output&quot; # para executar o comando de dentro do aplicativo
+every 1.minute do
+  command &quot;script/mailman&quot;
+end</code></pre>
+
+<p>Configure a periodicidade de acordo com sua necessidade e pronto. Não foi tão difícil!</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#rails">rails</a>
+  
+    <a href="/tags/#email">email</a>
+  
+    <a href="/tags/#rails3">rails3</a>
+  
+    <a href="/tags/#mailman">mailman</a>
+  
+    <a href="/tags/#incoming">incoming</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2011/1/11/processando-emails-recebidos-no-rails-com-mailman/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

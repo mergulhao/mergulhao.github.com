@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Whenever - Cron Jobs do jeito Ruby &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Whenever - Cron Jobs do jeito Ruby</h1>
+  <h2>Postado em 03/01/2011</h2>
+</hgroup>
+
+
+
+<p>Uma das ferramentas mais úteis (até mesmo essenciais, eu diria) no arsenal de um desenvolvedor web são as tarefas do <a href='http://en.wikipedia.org/wiki/Cron'>cron</a>. Porém sua sintaxe um tanto quanto estranha intimida muitos desenvolvedores, que acabam subutilizando a ferramenta.</p>
+
+<p>É ai que entra o Whenever, uma DSL ruby para escrever cron job que deixa essa tarefa bem mais fácil. Para instalar o whenever é necessario um:</p>
+
+<pre><code>gem install whenever</code></pre>
+
+<p>ou inclua a seguinte linha em seu Gemfile:</p>
+
+<pre><code>gem &#39;whenever&#39;</code></pre>
+
+<p>e dê um:</p>
+
+<pre><code>bundle install</code></pre>
+
+<p>depois disso você precisa navegar até o diretorio do seu projeto e executar:</p>
+
+<pre><code>wheneverize .</code></pre>
+
+<p>Isso irá criar um arquivo chamado schedule.rb na pasta config.</p>
+
+<p>É nesse arquivo que vão entrar suas tarefas, e é ai que começa a diversão.</p>
+
+<p>Dê uma olhada no seguinte snippet:</p>
+
+<pre><code>every 2.hours do
+ # seu comando entra aqui
+end</code></pre>
+
+<p>É fácil assim.</p>
+
+<p>Você pode ainda passar um segundo parametro para o metodo every especificando o horario que você quer que a tarefa seja executada.</p>
+
+<pre><code>every 2.days, :at =&gt; ‘2am’ do …</code></pre>
+
+<p>O whenever oferece também um metodo ‘rake’ que permite executar rake tasks com facilidade. Por exemplo:</p>
+
+<pre><code>every :hour do
+  rake minha:rake:task
+end</code></pre>
+
+<p>Você pode ainda executar comandos diretamente:</p>
+
+<pre><code>every 15.minutes do
+ command &quot;/usr/bin/comando_qualquer”
+end</code></pre>
+
+<p>Lindo.</p>
+
+<p>Só fique esperto para caso você receba um erro parecido com esse no seu /var/log/syslog:</p>
+
+<pre><code>Dec 28 02:00:01 toad CRON[23436]: (CRON) error (grandchild #23438 failed with exit status 127)
+Dec 28 02:00:01 toad CRON[23436]: (CRON) info (No MTA installed, discarding output)</code></pre>
+
+<p>Isso significa que o cron não conseguiu encontrar o comando rake no path. Se isso acontecer é só você especificar o path do comando. como abaixo:</p>
+
+<pre><code>job_type :rake, &quot;cd :path &amp;&amp; RAILS_ENV=:environment /usr/local/bin/rake :task :output&quot;</code></pre>
+
+<p>Mais algumas dicas:</p>
+
+<p>Você pode redirecionar o log do whenever para outro arquivo incluindo a linha abaixo em seu schedule:</p>
+
+<pre><code>set :output, &quot;/path/para/o/seu.log&quot;</code></pre>
+
+<p>Pare integrar o whenerver com o capistrano inclua essas linhas no seu deploy.rb. Assim o cron será atualizado a cada deploy:</p>
+
+<pre><code>set :whenever_command, &quot;bundle exec whenever&quot;
+require &#39;whenever/capistrano&#39;</code></pre>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#rails">rails</a>
+  
+    <a href="/tags/#ruby">ruby</a>
+  
+    <a href="/tags/#whenever">whenever</a>
+  
+    <a href="/tags/#cron">cron</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2011/1/3/whenever-cron-jobs-do-jeito-ruby/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

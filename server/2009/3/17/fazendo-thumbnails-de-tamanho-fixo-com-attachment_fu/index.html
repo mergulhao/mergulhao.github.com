@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Fazendo thumbnails de tamanho fixo com attachment_fu &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Fazendo thumbnails de tamanho fixo com attachment_fu</h1>
+  <h2>Postado em 17/03/2009</h2>
+</hgroup>
+
+
+
+<p>O plugin <a href='http://github.com/technoweenie/attachment_fu/tree/master'>attachment_fu</a> é quase que o plugin padrão para tratar do upload de arquivos em aplicações Rails. Ele suporta também o resize de imagens mantendo as proporções, mas não suporta crop. Sempre precisamos criar avatar ou coisas semelhantes. E em geral o avatar tem um tamanho fixo, como 80x80. Para isso é necessário fazer o crop da imagem. Adicione o método <em>resize_image</em>, como abaixo, no seu modelo:</p>
+
+<pre><code>class Photo &lt; ActiveRecord::Base
+  belongs_to :owner, :class_name =&gt; &quot;Person&quot;
+  has_attachment :content_type =&gt; :image,
+    :processor =&gt; :rmagick,
+    :storage =&gt; :file_system,
+    :resize_to =&gt; &#39;600&gt;&#39;,
+    :thumbnails =&gt; { 
+      :album        =&gt; &#39;crop: 150x150&#39;,
+      :icon         =&gt; &#39;72&gt;&#39; }
+
+  protected
+  def resize_image(img, size)
+    # resize_image take size in a number of formats, we just want
+    # Strings in the form of &quot;crop: WxH&quot;
+    reg = /^crop: (\d*)x(\d*)/i
+    if (size.is_a?(String) &amp;&amp; size =~ reg) ||
+        (size.is_a?(Array) &amp;&amp; size.first.is_a?(String) &amp;&amp;
+          size.first =~ reg)
+      img.crop_resized!($1.to_i, $2.to_i)
+      # We need to save the resized image in the same way the
+      # orignal does.
+      self.temp_path = write_to_temp_file(img.to_blob)
+    else
+      super # Otherwise let attachment_fu handle it
+    end
+  end
+end</code></pre>
+
+<p>Assim você sobrescreve o método original do <a href='http://github.com/technoweenie/attachment_fu/tree/master'>attachment_fu</a> para suportar uma sintaxe especial. Então quando você quiser um thumbnail ou até mesmo a imagem principal cortada de um tamanho específico, basta usar a string &#8216;crop: WxH&#8217;. Bom lembrar que isso só irá funcionar com o Rmagick. Eu dei uma olhada sobre como fazer usando o image_science, mas era um pouco mais chato. É bom setar: <em>:processor =&gt; :rmagick</em> na definição do <em>has_attachment</em>.</p>
+
+<p>Eu também fiz um teste para garantir que os meus thumbnails estão sendo gerados no tamanho correto:</p>
+
+<pre><code>describe &quot;photo resize&quot; do
+  it &quot;should create thumbnails with correct size&quot; do
+    photo = new_photo
+    photo.save!
+
+    full, album, icon = *Magick::ImageList.new(
+      photo.full_filename,
+      photo.full_filename(&#39;album&#39;),
+      photo.full_filename(&#39;icon&#39;)
+    )
+
+    full.columns.should == 50
+    full.rows.should == 64
+
+    album.columns.should == 150
+    album.rows.should == 150
+
+    icon.columns.should == 50
+    icon.rows.should == 64
+  end
+end</code></pre>
+
+<p>PS1: Sim, eu sou paranóico com testes e você também deveria ser!<br />PS2: Essa dica foi adaptada <a href='http://stuff-things.net/2008/02/21/quick-and-dirty-cropping-images-with-attachment_fu/'>daqui</a>.</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#rails">rails</a>
+  
+    <a href="/tags/#plugin">plugin</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2009/3/17/fazendo-thumbnails-de-tamanho-fixo-com-attachment_fu/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

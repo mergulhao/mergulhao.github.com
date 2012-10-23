@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Git cheat sheet &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <h2 id='criar_um_novo_branch_remoto'>Criar um novo branch remoto</h2>
+
+<pre><code>git push origin origin:refs/heads/nome-do-branch</code></pre>
+
+<h2 id='comear_a_trabalhar_localmente_no_branch_remoto_recm_criado'>Começar a trabalhar localmente no branch remoto recém criado</h2>
+
+<pre><code>git checkout --track -b nome-do-branch origin/nome-do-branch</code></pre>
+
+<h2 id='apagar_um_branch_remoto_do_clone_local_na_documentao_do_git_eles_so_chamados_de_remotetracking_branches_no_prximo_fetch_ou_pull_eles_sero_recriados'>Apagar um branch remoto do clone local (Na documentação do git eles são chamados de remote-tracking branches. No próximo fetch ou pull eles serão recriados.)</h2>
+
+<pre><code>git branch -d -r origin/nome-do-branch</code></pre>
+
+<h2 id='apagar_um_branch_do_repositrio_remoto'>Apagar um branch do repositório remoto</h2>
+
+<pre><code>git push origin :nome-do-branch // não esquecer dos &quot;:&quot; na frente do nome do branch</code></pre>
+
+<h2 id='apagar_um_branch_local'>Apagar um branch local</h2>
+
+<pre><code>git branch -d nome-do-branch</code></pre>
+
+<h2 id='refazer_o_ltimo_commit'>Refazer o último commit</h2>
+
+<p>Supondo que você fez um commit, mas por acaso esqueceu de fazer o <em>git add</em> em um arquivo. Faça o <em>git add</em> no arquivo e depois execute:</p>
+
+<pre><code>git commit --amend</code></pre>
+
+<p>O último commit será refeito com as alterações que você fez após ele.</p>
+
+<h2 id='merge_entre_o_master_e_um_remotetracking_branch'>Merge entre o master e um remote-tracking branch</h2>
+
+<pre><code>git merge master origin/nome-do-branch</code></pre>
+
+<h2 id='salvar_mudanas_temporariamente_para_poder_fazer_um_rebase_ou_pull'>Salvar mudanças temporariamente para poder fazer um rebase ou pull</h2>
+
+<pre><code>git stash save</code></pre>
+
+<h2 id='restaurar_as_mudanas_salvas_anteriormente'>Restaurar as mudanças salvas anteriormente</h2>
+
+<pre><code>git stash apply</code></pre>
+
+<h2 id='limpar_a_lista_de_stashmesmo_aps_aplicar_ele_continua_salvo'>Limpar a lista de stash(mesmo após aplicar ele continua salvo)</h2>
+
+<pre><code>git stash clear</code></pre>
+
+<h2 id='enviar_as_tags_locais_para_o_repositrio_remoto'>Enviar as tags locais para o repositório remoto</h2>
+
+<pre><code>git push --tags</code></pre>
+
+<h2 id='apagar_uma_tag_remota'>Apagar uma tag remota</h2>
+
+<pre><code>git push origin :refs/tags/nome-da-tag</code></pre>
+
+<h2 id='apagar_todas_as_mudanas_no_comitadas_at_o_momento_deixa_o_seu_branch_limpo_mas_no_apaga_arquivos_novos_que_nunca_foram_comitados'>Apagar todas as mudanças não comitadas até o momento (deixa o seu branch limpo, mas não apaga arquivos novos que nunca foram comitados)</h2>
+
+<pre><code>git checkout -f </code></pre>
+
+<h2 id='fazer_um_git_rm_arquivo_por_arquivo_pode_ser_chato_e_as_vezes_voc_no_pode_usar_o_git_add_u_seno_ele_atinjir_arquivos_que_voc_no_deseja'>Fazer um &#8216;git rm&#8217; arquivo por arquivo pode ser chato. E as vezes você não pode usar o &#8216;git add -u&#8217; senão ele atinjirá arquivos que você não deseja</h2>
+
+<pre><code>git ls-files --deleted | xargs git rm</code></pre>
+
+<h2 id='remover_referncia_a_branchs_remotos_j_apagados'>Remover referência a branchs remotos já apagados</h2>
+
+<pre><code>git remote prune origin</code></pre>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

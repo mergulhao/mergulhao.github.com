@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Criando um servidor smtp com postfix the simple way &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Criando um servidor smtp com postfix the simple way</h1>
+  <h2>Postado em 15/09/2009</h2>
+</hgroup>
+
+
+
+<h2 id='problema'>Problema</h2>
+
+<p>O Redeparede dispara ~150k e-mails por mês. Não é mailing list, são as ações dos usuários mesmo: cadastro, recuperação de senha, notificação de comentários etc. Nós usávamos um servidor smtp da Engine Yard, mas recentemente movemos para o EC2 da Amazon e lá não temos no plano um servidor smtp. Tentamos usar alguns comerciais comuns, mas todos tinham limite de envio de e-mail por conta. Passamos então a usar o <a href='http://www.authsmtp.com'>authsmtp</a>, que é um serviço de smtp especializado, mas a conta começou a ficar cara a medida que estávamos disparando muitos e-mails.</p>
+
+<p>A solução então foi fazer o que eu não queria inicialmente: configurar um smtp próprio. E-mail é sempre um problema. Configurar um servidor se mostrou um problema ainda maior do que eu imaginava. A nossa necessidade é muito simples: precisamos autenticar remotamente num servidor smtp para disparar e-mails. Apenas uma conta autenticada para enviar e-mails. Só isso. Só.</p>
+
+<p>Buscar na internet sobre o assunto retorna <a href='http://virtual01.lncc.br/~licht/linux/servidores.postfix.arq.html'>configurações</a> <a href='http://www.unitednerds.org/thefallen/docs/index.php?area=Postfix&amp;tuto=Postfix-Postfix_SASL_POP3_Virtual'>megalomaníacas</a> usando <a href='http://articles.slicehost.com/2008/9/2/mail-server-configuring-postfix-to-use-mysql-part-2'>mysql</a>, <a href='http://codepoets.co.uk/postfixadmin-postgresql-courier-squirrelmail-debian-etch-howto-tutorial'>postgresl</a>, mil tipos diferentes de autenticação, mas não tem o simples!</p>
+
+<p>Vamos ao trabalho.</p>
+
+<h2 id='dns_reverso'>DNS reverso</h2>
+
+<p>Você precisa ter o dns reverso configurado, sem isso todos os seus e-mails vão para caixa de spam. Você tem que verificar no lugar onde seu servidor está hospedado como configurar o reverso. No caso do <a href='http://slicehost.com'>Slicehost</a>, onde hospedamos o nosso smtp, isso é configurado a partir de uma interface web bem simples. Para saber se está funcionando é só digitar no console:</p>
+
+<pre><code>dig -x 67.23.23.229 (substitua pelo ip do seu servidor, claro ;)</code></pre>
+
+<p>A resposta tem que ser algo parecido com:</p>
+
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.5.0-P2 &lt;&lt;&gt;&gt; -x 67.23.23.229
+;; global options:  printcmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 57850
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;229.23.23.67.in-addr.arpa.	IN	PTR
+
+;; ANSWER SECTION:
+229.23.23.67.in-addr.arpa. 86400 IN	PTR	smtp.redeparede.com. # &lt;=== essa linha que importa, ela está dizendo que o nosso ip está apontando para o endereço correto
+
+;; AUTHORITY SECTION:
+23.23.67.in-addr.arpa.	3600	IN	NS	ns2.slicehost.net.
+23.23.67.in-addr.arpa.	3600	IN	NS	ns1.slicehost.net.
+
+;; ADDITIONAL SECTION:
+ns1.slicehost.net.	95375	IN	A	67.23.4.57
+ns2.slicehost.net.	88271	IN	A	173.45.224.132
+
+;; Query time: 158 msec
+;; SERVER: 201.17.0.114#53(201.17.0.114)
+;; WHEN: Tue Sep 15 13:42:16 2009
+;; MSG SIZE  rcvd: 157</code></pre>
+
+<p>Caso você não possua o <strong>dig</strong> instalado:</p>
+
+<pre><code>sudo aptitude install dnsutils</code></pre>
+
+<h2 id='configurando_o_spf'>Configurando o SPF</h2>
+
+<p>O SPF é uma entrada TXT no DNS que diz quais servidores estão autorizados a enviar e-mails do seu domínio. Esse registro é consultado pelo servidor que recebe seu e-mail e isso ajuda a você não cair na caixa de spam. No nosso caso os servidores são do Google e o nosso próprio smtp. A linha fica assim:</p>
+
+<pre><code>&quot;v=spf1 a mx include:smtp.redeparede.com include:aspmx.googlemail.com include:_spf.google.com ~all&quot;</code></pre>
+
+<h2 id='instalando_e_configurando_o_postfix'>Instalando e configurando o Postfix</h2>
+
+<p>Nós queríamos a configuração mais simples de todas. O que conseguimos foi fazer o postfix autenticar usando a própria base de usuários/senhas do sistema. Para simplificar as coisas eu fiz um script que executa os passos em sequencia. Baixe e execute como root num servidor limpo. Foi testado apenas no Ubuntu 9.04 (Jaunty Jackalope).</p>
+<code>
+<a href='http://mergulhao.info/assets/images/2009/9/15/install_and_configure_postfix_ubuntu.sh'>install\_and\_configure\_postfix\_ubuntu.sh</a>
+</code>
+<p>Primeiro vai pedir o seu domínio. Assumi que o servidor será smtp.seudominio.com, se não for esse o seu desejo, edite o script e mude na mão. Na instalação do postfix ele vai perguntar algumas coisas, basta selecionar as opções padrão. Depois vai perguntar sobre chaves, isso faz parte da criptografia TLS. Eu não sei se essas senhas que digitamos na chave servem pra alguma coisa. Na dúvida anote-as em algum lugar, mas acho que não vai precisar delas pra mais nada. Quando o script terminar de rodar tudo já vai estar configurado e funcionando! Abra um cliente de e-mail como o Evolution e teste enviar um e-mail autenticando no seu novo servidor usando login e senha de algum usuário do sistema.</p>
+
+<p>Abra o script e veja o que foi feito. O tutorial que me ajudou a escrever o script foi esse aqui: <a href='http://www.howtoforge.com/perfect_setup_debian_sarge_p4'>http://www.howtoforge.com/perfect_setup_debian_sarge_p4</a></p>
+
+<p>Se você conhece algum outro servidor smtp que faça isso de forma mais simples, por favor, não deixe de compartilhar.</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#redeparede">redeparede</a>
+  
+    <a href="/tags/#email">email</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2009/9/15/criando-um-servidor-smtp-com-postfix-the-simple-way/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Autocomplete simples para Rails 3 com jQuery &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Autocomplete simples para Rails 3 com jQuery</h1>
+  <h2>Postado em 04/01/2011</h2>
+</hgroup>
+
+
+
+<p>Autocomplete é uma ferramenta muito útil em um aplicativo web. Tanto para manter a consistencia dos dados quanto para facilitar a vida do usuário.</p>
+
+<p>A gem <a href='https://github.com/crowdint/rails3-jquery-autocomplete'>rails3-jquery-autocomplete</a> torna a implementação do autocomplete no rails 3 bem simples.</p>
+
+<p>Antes de começar, verifique se você já está incluindo o <a href='http://jquery.com/'>jQuery</a> e o <a href='http://jqueryui.com/demos/autocomplete/'>jQuery.ui</a> em seu layout, pois eles são pre-requisito para essa gem.</p>
+
+<p>Se estiver tudo ok, vamos ao trabalho. Para começar, os passos básicos:</p>
+
+<p>Adicione a gem ao seu Gemfile:</p>
+
+<pre><code>gem &#39;rails3-jquery-autocomplete&#39;</code></pre>
+
+<p>Dê um:</p>
+
+<pre><code>bundle install</code></pre>
+
+<p>Rode o generator:</p>
+
+<pre><code>rails generate autocomplete</code></pre>
+
+<p>E inclua o javascript em seu layout:</p>
+
+<pre><code>javascript_include_tag &quot;autocomplete-rails.js&quot;</code></pre>
+
+<p>Então, com tudo configurado partimos para a utilização.</p>
+
+<p>Digamos que nós tivessemos os modelos Product e Category e quisessemos fazer autocomplete do nome da categoria nos formulários dos produtos.</p>
+
+<p>Note que o campo category do modelo Product precisa ser um campo de texto. Para fazer autocomplete em um campo que é chave estrangeira a abordagem é um pouco diferente, e vai ficar para um próximo post.</p>
+
+<p>Seguindo. O próximo passo é adicionar no products_controller.rb:</p>
+
+<pre><code>autocomplete :category, :name</code></pre>
+
+<p>Isso cria uma action chamada autocomplete_category_name que retorna um json com os valores possiveis para o campo name.</p>
+
+<p>Inclua a action nas rotas:</p>
+
+<pre><code>resources :products do
+  get :autocomplete_category_name, :on =&gt; :collection
+end</code></pre>
+
+<p>Nas views você só precisa substituir o text_field pela tag autocomplete_field, como no exemplo:</p>
+
+<pre><code>form_for @product do |f|
+  f.autocomplete_field :category_name, autocomplete_category_name_products_path
+end</code></pre>
+
+<p>E é só. Você tem um autocomplete pronto e funcional.</p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#ruby">ruby</a>
+  
+    <a href="/tags/#javascript">javascript</a>
+  
+    <a href="/tags/#rails3">rails3</a>
+  
+    <a href="/tags/#jquery">jquery</a>
+  
+    <a href="/tags/#autocomplete">autocomplete</a>
+  
+    <a href="/tags/#form">form</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2011/1/4/autocomplete-simples-para-rails-3/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>

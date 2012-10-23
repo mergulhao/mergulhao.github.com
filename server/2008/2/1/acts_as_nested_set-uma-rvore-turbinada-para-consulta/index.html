@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Acts_as_nested_set, uma árvore turbinada para consulta &mdash; Por Sylvestre Mergulhão</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link href='/assets/stylesheets/reset.css' rel='stylesheet' media="all" />
+  <link href='/assets/stylesheets/global.css' rel='stylesheet' media="all" />
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200|Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css' />
+
+  <link href='/favicon.png' rel='shortcut icon' />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src='/assets/javascripts/scripts.js'></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1780029-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <article>
+    <a href="#" id="show-info">sobre &#8595;</a>
+    <header>
+      
+        <a id="brand" href="/">
+          <hgroup>
+            <h1>Mergulhao.info</h1>
+            <h2>Por Sylvestre Mergulhão</h2>
+          </hgroup>
+        </a>
+      
+
+      <form class="navbar-search pull-right visible-desktop" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="010524361318296033268:c-e-2ijyy_i" />
+        <input type="hidden" name="cof" value="FORID:0" />
+        <input name="q" class="search-query" type="text" placeholder="buscar por..." />
+      </form>
+
+      <p id="about"><img src="/assets/images/mergulhao-thumb.png" alt="Foto de Sylvestre Mergulhão" /> Sylvestre Mergulhão é empreendedor e programador. Fundador do <a href="http://startupdev.com.br">Startup DEV</a> e sócio da <a href="http://helabs.com.br/">HE:labs</a>.</p>
+
+      <ul>
+        <li><a href="http://startupdev.com.br" id="startupdev-link">Startup DEV</a></li>
+        <li><a href="http://helabs.com.br/" id="helabs-link">HE:labs</a></li>
+      </ul>
+    </header>
+    <hr />
+    <section role="main">
+      <hgroup>
+  <h1>Acts_as_nested_set, uma árvore turbinada para consulta</h1>
+  <h2>Postado em 01/02/2008</h2>
+</hgroup>
+
+
+
+<p>No projeto <a href='http://www.rioonrails.com.br/speeches/projeto-lucidus'>Lucidus</a> ficamos diante de um problema há algumas semanas. Chegamos num ponto do projeto onde muitas coisas haviam sido desenvolvidas em torno de uma <a href='http://en.wikipedia.org/wiki/Natural_key'>chave natural</a> que representava uma conta pertencente a uma árvore de contas contábil. A árvore contábil (ou plano de contas) é uma estrutura hierárquica de 5 níveis.</p>
+
+<p>Uma conta num sistema contábil é um número, que possui uma semantica associada, onde se colocam lançamentos de despesa (gastos com luz, empregados, etc) ou receita (recebimento de aluguél, condomínio, etc).</p>
+
+<p>Simples exemplo de árvore contábil:</p>
+
+<ul>
+<li>1 0 00 00 00 - Primeiro nível</li>
+
+<li>1 1 00 00 00 - Segundo nível</li>
+
+<li>1 1 01 00 00 - Terceiro nível</li>
+
+<li>1 1 01 01 00 - Quarto nível</li>
+
+<li>1 1 01 01 01 - Quinto nível</li>
+
+<li>1 1 01 01 02 - Quinto nível</li>
+</ul>
+
+<p>O problema se desenvolveu pelo fato de estarmos utilizando uma <a href='http://en.wikipedia.org/wiki/Natural_key'>chave natural</a> e uma estrutura com simulação de árvore através da <a href='http://en.wikipedia.org/wiki/Natural_key'>chave natural</a>. Para encontrarmos o pai ou os filhos de uma conta era necessário realizarmos buscas no banco utilizando coisas como &#8220;like &#8216;1101%&#8217;&#8220;, por exemplo, o que fazia os índices não terem efeito algum. Em algumas situações geramos relatórios consolidados buscando dados dos últimos 12 meses, o que gerava (sem exagero) milhares de queries no banco e cálculos absurdos.</p>
+
+<p>A coisa começou a ficar inviável por 2 motivos: o desempenho não estava satisfatório e a complexidade do código dos nossos modelos estava ficando grande demais, devido a necessidade de simular o efeito de árvore e outros problemas decorrentes.</p>
+
+<p>Tínhamos que resolver o problema, mas qualquer solução que se utilizasse de uma simples árvore iria decair em problema semelhante de desempenho, pela quantidade de queries que teriam que ser realizadas para varrer toda a árvore de contas. Resolvemos ver do que se tratava o <a href='http://api.rubyonrails.org/classes/ActiveRecord/Acts/NestedSet/ClassMethods.html'>acts_as_nested_set</a> do Rails e ele implementava justamente o que precisávamos: uma árvore de busca implementada para um modelo do ActiveRecord! Para inserção de um nó ela é mais lenta que no <a href='http://wiki.rubyonrails.org/rails/pages/ActsAsTree'>acts_as_tree</a>, mas na consulta ela pode buscar todos os filhos(e filhos dos filhos e assim por diante) de um nó com apenas uma query.</p>
+
+<p>O <a href='http://api.rubyonrails.org/classes/ActiveRecord/Acts/NestedSet/ClassMethods.html'>acts_as_nested_set</a> ainda não implementava todos os métodos que necessitávamos, como o método <strong>level</strong>, que informa a qual nível um nó pertence. Então continuando a busca por uma solução encontramos o plugin <a href='http://opensource.symetrie.com/trac/better_nested_set/'>better_nested_set</a> que faz tudo que o original faz, mas implementando diversos outros métodos utilitários.</p>
+
+<p>Então decidimos resolver o problema de vez e tivemos a <a href='http://www.improveit.com.br/xp/valores/coragem'>coragem</a> de refatorar todo o sistema implementando o <a href='http://opensource.symetrie.com/trac/better_nested_set/'>better_nested_set</a> na árvore de contas.</p>
+
+<p>Para a teoria de funcionamento dessa árvore, modo de cálculo dos índices e etc, busque nos links citados que encontrará todas as informações. Farei apenas uma pequena explicação sobre como utilizá-la em seu projeto Rails.</p>
+
+<p>Primeiro de tudo, instale o plugin no seu projeto:</p>
+
+<pre><code>script/plugin install svn://rubyforge.org/var/svn/betternestedset/tags/stable/betternestedset</code></pre>
+
+<p>Crie um modelo e uma migração. No projeto exemplo criei um modelo <strong>conta</strong>:</p>
+
+<pre><code>script/generate model conta</code></pre>
+
+<p>E defini a migração assim:</p>
+
+<pre><code>class CreateContas &lt; ActiveRecord::Migration 
+  def self.up 
+    create_table :contas do |t| 
+      t.string :codigo, :limit =&gt; 8, :null =&gt; false 
+      t.integer :parent_id 
+      t.integer :lft 
+      t.integer :rgt 
+      t.timestamps 
+    end 
+  end 
+
+  def self.down 
+    drop_table :contas 
+  end 
+end</code></pre>
+
+<p>Repare que há um campo <strong>parent_id</strong> que representará o nó pai e os índices <strong>lft</strong> e <strong>rgt</strong> (<strong>não use left e right, pois em geral são palavras reservadas nos banco de dados</strong>) que são utilizados pela árvore.</p>
+
+<p>O nosso modelo fica assim:</p>
+
+<pre><code>class Conta &lt; ActiveRecord::Base
+  acts_as_nested_set
+end</code></pre>
+
+<p>Agora podemos brincar com nossa árvore! Vamos ao console:</p>
+
+<pre><code>Loading development environment (Rails 2.0.2) 
+&gt;&gt; Conta.roots 
+=&gt; []</code></pre>
+
+<p>Nosso modelo dizendo que não há nenhum nó raiz. Vamos criar um:</p>
+
+<pre><code>&gt;&gt; conta1 = Conta.create(:codigo =&gt; &#39;10000000&#39;) 
+=&gt; #&lt;Conta id: 1, codigo: &quot;10000000&quot;, parent_id: nil, lft: 1, rgt: 2, created_at: &quot;2008-02-01 00:28:58&quot;, updated_at: &quot;2008-02-01 00:28:58&quot;&gt; 
+&gt;&gt;</code></pre>
+
+<p><strong>Conta.roots</strong> agora retorna nossa recém criada conta:</p>
+
+<pre><code>&gt;&gt; Conta.roots 
+=&gt; [#&lt;Conta id: 1, codigo: &quot;10000000&quot;, parent_id: nil, lft: 1, rgt: 2, created_at: &quot;2008-02-01 00:30:56&quot;, updated_at: &quot;2008-02-01 00:30:56&quot;&gt;] 
+&gt;&gt;</code></pre>
+
+<p>Podemos adicionar um filho a ela:</p>
+
+<pre><code>&gt;&gt; conta1.add_child(Conta.create(:codigo =&gt; &#39;11000000&#39;))</code></pre>
+
+<p>E consultar os filhos de conta1:</p>
+
+<pre><code>&gt;&gt; conta1.children 
+=&gt; [#&lt;Conta id: 2, codigo: &quot;11000000&quot;, parent_id: 1, lft: 2, rgt: 3, created_at: &quot;2008-02-01 00:33:03&quot;, updated_at: &quot;2008-02-01 00:33:03&quot;&gt;] 
+&gt;&gt;</code></pre>
+
+<p>E adicionar um filho a nossa segunda conta:</p>
+
+<pre><code>&gt;&gt; conta2 = Conta.find(2) 
+=&gt; #&lt;Conta id: 2, codigo: &quot;11000000&quot;, parent_id: 1, lft: 2, rgt: 3, created_at: &quot;2008-02-01 00:33:03&quot;, updated_at: &quot;2008-02-01 00:33:03&quot;&gt; 
+&gt;&gt; conta2.add_child(Conta.create(:codigo =&gt; &#39;11010000&#39;)) 
+=&gt; #&lt;Conta id: 2, codigo: &quot;11000000&quot;, parent_id: 1, lft: 2, rgt: 5, created_at: &quot;2008-02-01 00:33:03&quot;, updated_at: &quot;2008-02-01 00:33:03&quot;&gt; 
+&gt;&gt;</code></pre>
+
+<p>E assim sucessivamente até termos os 5 níveis contábeis(inseri dois nós no último nível, como no exemplo no início do artigo). Após as inserções fazemos uma busca por todos os filhos do nosso nó raiz:</p>
+
+<pre><code>&gt;&gt; conta1.all_children 
+=&gt; [#&lt;Conta id: 2, codigo: &quot;11000000&quot;, parent_id: 1, lft: 2, rgt: 11, created_at: &quot;2008-02-01 00:33:03&quot;, updated_at: &quot;2008-02-01 00:33:03&quot;&gt;, #&lt;Conta id: 3, codigo: &quot;11010000&quot;, parent_id: 2, lft: 3, rgt: 10, created_at: &quot;2008-02-01 00:35:18&quot;, updated_at: &quot;2008-02-01 00:35:18&quot;&gt;, #&lt;Conta id: 4, codigo: &quot;11010100&quot;, parent_id: 3, lft: 4, rgt: 9, created_at: &quot;2008-02-01 00:37:17&quot;, updated_at: &quot;2008-02-01 00:37:17&quot;&gt;, #&lt;Conta id: 5, codigo: &quot;11010101&quot;, parent_id: 4, lft: 5, rgt: 6, created_at: &quot;2008-02-01 00:37:50&quot;, updated_at: &quot;2008-02-01 00:37:50&quot;&gt;, #&lt;Conta id: 6, codigo: &quot;11010102&quot;, parent_id: 4, lft: 7, rgt: 8, created_at: &quot;2008-02-01 00:40:28&quot;, updated_at: &quot;2008-02-01 00:40:28&quot;&gt;] 
+&gt;&gt; conta1.all_children.size 
+=&gt; 5 
+&gt;&gt;</code></pre>
+
+<p>E se verificarmos no log, apenas uma sql foi executada para busca de todos os filhos:</p>
+
+<pre><code>Conta Load (0.004532)   SELECT * FROM contas WHERE (1 = 1 AND (lft BETWEEN 1 AND 10)) ORDER BY lft</code></pre>
+
+<p>Espero que possa ser útil para alguém! Se precisarem de uma estrutura que se pareça com uma árvore e precise ser otimizada para consulta, não deixe de conferir esse plugin.</p>
+
+<p>Os arquivos desse artigo podem ser baixados aqui:</p>
+
+<p><a href='http://mergulhao.info/assets/images/2008/8/22/betternestedset.tgz'>http://mergulhao.info/assets/images/2008/8/22/betternestedset.tgz</a></p>
+
+
+  <div class="tags">
+  
+    <a href="/tags/#rails">rails</a>
+  
+    <a href="/tags/#artigos">artigos</a>
+  
+  </div>
+
+<div class="well">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'mergulhaoinfo';
+      var disqus_url = 'http://mergulhao.info/2008/2/1/acts_as_nested_set-uma-rvore-turbinada-para-consulta/';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+    </section>
+    <hr />
+    <footer>
+      <div id="go-to-top"><a href="#">&#8593; topo</a></div>
+      <p id="copy">Copyright &copy; 2012 Mergulhao.info</p>
+      <p>Veja minhas palestras no <a href="https://speakerdeck.com/u/mergulhao" rel="external">Speaker Deck</a> e me acompanhe também no twitter <a href="http://twitter.com/smergulhao" target="_blank" rel="external,nofollow">@smergulhao</a>.</p>
+      <p><a href="http://pt.wikipedia.org/wiki/Rio_de_Janeiro_%28cidade%29" rel="external,nofollow">Rio de Janeiro</a>, <a href="http://pt.wikipedia.org/wiki/Brasil" rel="external,nofollow">Brasil</a>.</p>
+    </footer>
+  </article>
+</body>
+</html>
