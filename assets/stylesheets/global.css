@@ -117,6 +117,30 @@ section[role="main"] {
   width: 50%;
 }
 
+section[role="main"] ul,
+section[role="main"] ol {
+  margin: 1.4em 2em;
+}
+
+section[role="main"] blockquote {
+  margin: 0 4em;
+  font-style: italic;
+  font-size: .9em;
+}
+
+section[role="main"] ul {
+  list-style-type: disc;
+}
+
+section[role="main"] ol {
+  list-style-type: decimal;
+}
+
+section[role="main"] ul li,
+section[role="main"] ol li {
+  line-height: 1.4;
+}
+
 section[role="main"] a {
   color: #B00;
 }
