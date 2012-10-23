@@ -146,22 +146,22 @@ section[role="main"] hgroup h3 {
 }
 
 section[role="main"] .tags {
-  margin: 0 0 2.5em;
+  margin: 0 0 3em;
 }
 
 section[role="main"] .tags a {
   margin: 0 .5em 0 0;
-  padding: 5px 10px;
-  background: #fff;
+  padding: 3px 10px;
+  background: #900;
+  color: #fff;
   font-size: .8em;
-  border: 1px solid #FC9797;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
 section[role="main"] .tags a:hover {
-  border: 1px solid #900;
+  background: #B33;
   text-decoration: none;
 }
 
