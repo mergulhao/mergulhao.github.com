@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /svn
-Sitemap: http://mergulhao.info/atom.xml
