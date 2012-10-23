@@ -5,7 +5,7 @@ categories:
   []
 tags:
   []
-image: http://mergulhao.info/assets/images/2010/10/1/DevInRio_logo-300x169.gif
+image: /assets/images/2010/10/1/DevInRio_logo-300x169.gif
 ---
 
 Estou achando incrivelmente alta a quantidade de desenvolvedores que não estão dando o devido valor aos eventos como o [Devinrio][dv]. Eu como consultor da [Helabs][he] tenho tido contato com desenvolvedores de diversos níveis, de várias empresas e eu percebo que eles não se interessam pela coisa.

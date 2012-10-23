@@ -16,19 +16,19 @@ O plugin [contacts][1] foi desenvolvido pelo [Mislav Marohnić][2] e serve para 
 Não é nada do outro mundo. Você coloca dentro da sua página um botão que levará o usuário para a página do serviço.
 
 <div class="center">
-<a href="http://mergulhao.info/assets/images/2009/3/14/contacts1.png"><img src="http://mergulhao.info/assets/images/2009/3/14/contacts1.png" alt="Contacts Image 1" width="480" height="202" /></a>
+<a href="/assets/images/2009/3/14/contacts1.png"><img src="/assets/images/2009/3/14/contacts1.png" alt="Contacts Image 1" width="480" height="202" /></a>
 </div>
 
 Ao clicar no botão você entra na página do serviço, nesse caso o Google, onde se tem a opção de conceder ou de negar o acesso.
 
 <div class="center">
-<a href="http://mergulhao.info/assets/images/2009/3/14/contacts2.png"><img src="http://mergulhao.info/assets/images/2009/3/14/contacts2.png" alt="Contacts Image 2" width="480" height="202" /></a>
+<a href="/assets/images/2009/3/14/contacts2.png"><img src="/assets/images/2009/3/14/contacts2.png" alt="Contacts Image 2" width="480" height="202" /></a>
 </div>
 
 Ao conceder o acesso, o Google envia o usuário novamente para o seu site, passando um token como parâmetro na URL. É com esse token que fazemos o acesso aos contatos do usuário.
 
 <div class="center">
-<a href="http://mergulhao.info/assets/images/2009/3/14/contacts3.png"><img src="http://mergulhao.info/assets/images/2009/3/14/contacts3.png" alt="Contacts Image 3" width="480" height="202" /></a>
+<a href="/assets/images/2009/3/14/contacts3.png"><img src="/assets/images/2009/3/14/contacts3.png" alt="Contacts Image 3" width="480" height="202" /></a>
 </div>
 
 ## Mãos à obra

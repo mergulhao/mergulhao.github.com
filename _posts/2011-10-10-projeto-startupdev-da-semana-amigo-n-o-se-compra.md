@@ -5,7 +5,7 @@ categories:
   []
 tags:
   - startupdev
-image: http://mergulhao.info/assets/images/2011/10/10/logomarca_amigo_03.original_4mvojtamwa8dnzeo.png
+image: /assets/images/2011/10/10/logomarca_amigo_03.original_4mvojtamwa8dnzeo.png
 ---
 
 O Startup DEV que começa amanhã tratará de um tema muito especial: adoção de animais domésticos, principalmente cães e gatos. É preciso muita responsabilidade ao possuir um animal. Eles tem sentimento e precisam de cuidado especial, tão como fornecemos a nossos filhos.

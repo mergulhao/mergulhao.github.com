@@ -24,7 +24,7 @@ e
 
 E temos o modelo de dados:
 
-p{text-align: center}. <img src="http://mergulhao.info/assets/images/2007/5/18/activerecord1.png" style="border: 0px;" alt="activerecord1.png" />
+p{text-align: center}. <img src="/assets/images/2007/5/18/activerecord1.png" style="border: 0px;" alt="activerecord1.png" />
 
 A tabela *books_categories* não precisa de modelo. Ela é mapeada automaticamente pelo *has_and_belongs_to_many*. Para adicionar uma categoria a um livro:
 
@@ -45,7 +45,7 @@ Mas e se o relacionamento em si possuir atributos também? No nosso caso, isso s
 
 Alterando o modelo de dados para:
 
-p{text-align: center}. <img src="http://mergulhao.info/assets/images/2007/5/18/activerecord2.png" style="border: 0px;" alt="activerecord1.png" />
+p{text-align: center}. <img src="/assets/images/2007/5/18/activerecord2.png" style="border: 0px;" alt="activerecord1.png" />
 
 Temos agora a substituição da tabela *books_categories* pela tabela *comments*, que provê as mesmas informações da anterior e mais um comentário. Então agora cada livro possui um comentário que por sua vez está associado a uma categoria. Esse comentário poderia ser usado, por exemplo, para explicar por que a pessoa que cadastrou o livro incluiu-o naquela categoria. Os modelos ficam agora:
 

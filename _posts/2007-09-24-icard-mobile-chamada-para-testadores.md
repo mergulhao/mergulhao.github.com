@@ -5,7 +5,7 @@ categories:
   []
 tags:
   - projetos
-image: http://mergulhao.info/assets/images/2007/9/24/logo_icard.gif
+image: /assets/images/2007/9/24/logo_icard.gif
 ---
 
 Durante o ano passado tive o prazer de trabalhar numa startup focada em mobile, com pessoas muito legais e fazendo softwares j2me de primeira linha. Infelizmente a startup não deu certo, mas as coisas legais não acabaram. O primeiro desenvolvimento em j2me foi o icard mobile. Trata-se de um pequeno aplicativo j2me que envia cartões de visita virtuais via e-mail. Ele fez um sucesso razoável no exterior, principalmente sudeste asiático, chegando a enviar alguns milhares de cartões por dia.
@@ -13,7 +13,7 @@ Durante o ano passado tive o prazer de trabalhar numa startup focada em mobile, 
 Através do site, mediante informação do código de registro que se recebe ao efetuar o cadastramento pelo aplicativo, é possível fazer upload de uma imagem que ficará no canto à direita do cartão e também escolher entre 6 cores diferentes de fundo para o seu cartão. É um serviço gratuito e que pode ajudar nas horas em que seu cartão de visita acabou, normalmente nos piores momentos ;). 
 
 <div style="text-align: center">
-<img src="http://mergulhao.info/assets/images/2007/9/24/icard_example.png" alt="icard example" style="border: 0px;" />
+<img src="/assets/images/2007/9/24/icard_example.png" alt="icard example" style="border: 0px;" />
 </div>
 
 Originalmente todo o backend do sistema estava desenvolvido em lua. Durante essa semana, efetuei a migração para Rails e fiz pequenos ajustes necessários na aplicação j2me.

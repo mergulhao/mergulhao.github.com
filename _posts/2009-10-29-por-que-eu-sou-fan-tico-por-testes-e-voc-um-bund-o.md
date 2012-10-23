@@ -7,7 +7,7 @@ tags:
   - tdd
   - palestra
   - latinoware
-image: http://mergulhao.info/assets/images/2009/10/29/superhomem_1.png
+image: /assets/images/2009/10/29/superhomem_1.png
 ---
 
 Esse foi o título de uma palestra que eu submeti junto com o [Henrique Andrade][ha] para o FISL desse ano. Ela não foi aprovada lá, principalmente pois alguns dos avaliadores acharam o título ofensivo. Foi amor e ódio aquela avaliação. Alguns acharam sensacional e outros odiaram do fundo do coração! Felizmente conseguimos aprovar ela para o [Latinoware][]!
@@ -18,8 +18,8 @@ Como levar pessoas para uma palestra independentemente de qual o assunto? Insult
 
 <ul class="thumbnails pull-right">
   <li class="span3">
-    <a href="http://mergulhao.info/assets/images/2009/10/29/batman_1.png" class="thumbnail">
-      <img src="http://mergulhao.info/assets/images/2009/10/29/batman_1.png" alt="{{ page.title }}">
+    <a href="/assets/images/2009/10/29/batman_1.png" class="thumbnail">
+      <img src="/assets/images/2009/10/29/batman_1.png" alt="{{ page.title }}">
     </a>
   </li>
 </ul>

@@ -6,7 +6,7 @@ categories:
 tags:
   - linux
   - ferramentas
-image: http://mergulhao.info/assets/images/2009/3/31/harddisk.jpg
+image: /assets/images/2009/3/31/harddisk.jpg
 ---
 
 Pensei no título desse post em algo como "Micro$oft, a saga continua agora em outra galáxia" ou algo assim, mas resolvi fazer uma coisa mais informativa. Sei que muita gente passa por isso e nem sempre é fácil achar informação válida sobre o assunto.

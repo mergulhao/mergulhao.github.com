@@ -6,7 +6,7 @@ categories:
 tags:
   - tdd
   - palestra
-image: http://mergulhao.info/assets/images/2009/11/26/bundao.jpg
+image: /assets/images/2009/11/26/bundao.jpg
 ---
 
 O [bundão](http://mergulhao.info/2009/10/29/por-que-eu-sou-fan-tico-por-testes-e-voc-um-bund-o) foi convidado para mais dois eventos esse fim de ano.

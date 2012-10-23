@@ -159,20 +159,20 @@ Abaixo segue a saga na tentativa, ainda sem solução, de resolver o problema co
 > 	
 > Segue em anexo.
 
-<a href="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-0.png">
-<img src="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-0.png" width="473" height="361" alt="ms image0"/>
+<a href="/assets/images/2009/2/10/Captura_de_tela-0.png">
+<img src="/assets/images/2009/2/10/Captura_de_tela-0.png" width="473" height="361" alt="ms image0"/>
 </a>
 
-<a href="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-1.png">
-<img src="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-1.png" width="473" height="361" alt="ms image1"/>
+<a href="/assets/images/2009/2/10/Captura_de_tela-1.png">
+<img src="/assets/images/2009/2/10/Captura_de_tela-1.png" width="473" height="361" alt="ms image1"/>
 </a>
 
-<a href="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-2.png">
-<img src="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-2.png" width="473" height="361" alt="ms image2"/>
+<a href="/assets/images/2009/2/10/Captura_de_tela-2.png">
+<img src="/assets/images/2009/2/10/Captura_de_tela-2.png" width="473" height="361" alt="ms image2"/>
 </a>
 
-<a href="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-3.png">
-<img src="http://mergulhao.info/assets/images/2009/2/10/Captura_de_tela-3.png" width="473" height="361" alt="ms image3"/>
+<a href="/assets/images/2009/2/10/Captura_de_tela-3.png">
+<img src="/assets/images/2009/2/10/Captura_de_tela-3.png" width="473" height="361" alt="ms image3"/>
 </a>
 
 ## Resposta do Email 3 - 07/02/2009
@@ -216,8 +216,8 @@ Abaixo segue a saga na tentativa, ainda sem solução, de resolver o problema co
 > 
 > Obrigado.
 
-<a href="http://mergulhao.info/assets/images/2009/2/10/imagem.png">
-<img src="http://mergulhao.info/assets/images/2009/2/10/imagem.png" width="473" height="226" alt="ms image4"/>
+<a href="/assets/images/2009/2/10/imagem.png">
+<img src="/assets/images/2009/2/10/imagem.png" width="473" height="226" alt="ms image4"/>
 </a>
 
 ## Resposta do Email 4 - 10/02/2009

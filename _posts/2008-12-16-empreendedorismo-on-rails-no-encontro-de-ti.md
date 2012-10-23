@@ -17,7 +17,7 @@ Sairam os vídeos da minha apresentação no [Encontro de TI][eti]. A [palestra]
 <br/>
 &#x20;<iframe width="560" height="315" src="http://embed.videolog.tv/v/index.php?id_video=391504" scrolling="no" frameborder="0">&nbsp;</iframe><p><a href="http://www.videolog.tv/video.php?id=391504" target="_blank">Oficina Ruby On Rails - Parte 3/3</a> por <a href="http://www.videolog.tv/Arteccom" target="_blank">Arteccom</a>  no <a href="http://www.videolog.tv" target="_blank">Videolog.tv</a>.</p>
 
-[palestra]: http://mergulhao.info/assets/images/2008/12/3/EmpreendedorismoOnRails.pdf
+[palestra]: /assets/images/2008/12/3/EmpreendedorismoOnRails.pdf
 [eti]: http://encontrodeti.com.br/
 [vini]: http://www.improveit.com.br/empresa/vinicius
 [summit2008]: http://www.locaweb.com.br/railssummit/

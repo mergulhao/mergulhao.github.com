@@ -6,7 +6,7 @@ categories:
 tags:
   - rails
   - empreendedorismo
-image: http://mergulhao.info/assets/images/2010/2/4/4327691929_4da2243985_m.jpg
+image: /assets/images/2010/2/4/4327691929_4da2243985_m.jpg
 ---
 
 Há pouco mais de um ano atrás eu fiz uma palestra no [Encontro de TI][eti] sobre [Empreendedorismo on Rails][eor]. A apresentação bombou, fez o maior sucesso, mas até hoje eu não tinha dado nenhum feedback sobre o que eu mesmo estava fazendo em relação ao que preguei na palestra. O fato é que 2009 foi um ano de muito trabalho, onde eu comecei a preparar os alicerces do que vou apresentar hoje. É sempre bom lembrar que tudo foi e continuará sendo feito durante os tempos vagos.
