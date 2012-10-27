@@ -5,15 +5,14 @@ body {
   line-height: 1.25;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   background: transparent url(/assets/images/bg-body.png);
-  color: #333;
+  color: #2B2021;
 }
 
 a, a:active, a:visited {
-  color: #FC9797;
+  color: #D8CB63;
 }
 
 a:hover {
-  color: #F97575;
   text-decoration: underline;
 }
 
@@ -36,8 +35,8 @@ header {
   left: 0;
   width: 240px;
   padding: 20px;
-  background-color: #363636;
-  border-right: 5px solid #333;
+  background-color: #3C3032;
+  border-right: 5px solid #2B2021;
   -moz-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
   -webkit-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
   -ms-box-shadow: inset -10px 0 10px rgba(0,0,0,.2);
@@ -142,11 +141,7 @@ section[role="main"] ol li {
 }
 
 section[role="main"] a {
-  color: #B00;
-}
-
-section[role="main"] a:hover {
-  color: #900;
+  color: #AA3B20;
 }
 
 section[role="main"] hgroup h1,
@@ -155,7 +150,7 @@ section[role="main"] hgroup h2 a {
   font-family: 'Raleway', Helvetica, Arial, Sans-Serif;
   font-weight: 200;
   letter-spacing: -1px;
-  color: #900;
+  color: #AA3B20;
 }
 
 section[role="main"] hgroup h2 a {
@@ -176,7 +171,7 @@ section[role="main"] .tags {
 section[role="main"] .tags a {
   margin: 0 .5em 0 0;
   padding: 3px 10px;
-  background: #900;
+  background: #AA3B20;
   color: #fff;
   font-size: .8em;
   -moz-border-radius: 4px;
@@ -185,7 +180,7 @@ section[role="main"] .tags a {
 }
 
 section[role="main"] .tags a:hover {
-  background: #B33;
+  background: #34B0E4;
   text-decoration: none;
 }
 
@@ -236,7 +231,7 @@ section[role="main"] .tags a:hover {
   font-weight: bold;
   text-align: center;
   background: #fff;
-  color: #363636;
+  color: #3C3032;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -339,7 +334,7 @@ footer p#copy {
     margin: auto;
     padding: 20px;
     border-right: none;
-    border-bottom: 5px solid #333;
+    border-bottom: 5px solid #2B2021;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     -ms-box-shadow: none;
@@ -379,7 +374,7 @@ footer p#copy {
     margin: 20px auto;
     padding: 20px 0;
     font-size: 1.2em;
-    color: #363636;
+    color: #3C3032;
   }
 
   footer a {
