@@ -149,7 +149,7 @@ section[role="main"] a:hover {
 }
 
 section[role="main"] hgroup h1,
-section[role="main"] hgroup h2 a {
+section[role="main"] h2 a {
   font-size: 2.2em;
   font-family: 'Raleway', Helvetica, Arial, Sans-Serif;
   font-weight: 200;
@@ -157,7 +157,7 @@ section[role="main"] hgroup h2 a {
   color: #4B514E;
 }
 
-section[role="main"] hgroup h2 a {
+section[role="main"] h2 a {
   font-size: 1.5em;
 }
 
@@ -186,6 +186,10 @@ section[role="main"] .tags a {
 section[role="main"] .tags a:hover {
   background: #A1A78E;
   text-decoration: none;
+}
+
+section[role="main"] article.tag-list {
+  padding-top: 20px;
 }
 
 #post-image {
