@@ -168,6 +168,16 @@ section[role="main"] hgroup h3 {
   font-style: italic;
 }
 
+section[role="main"] h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+section[role="main"] hr {
+  display: block;
+  color: #696969;
+}
+
 section[role="main"] .tags {
   margin: 0 0 3em;
 }
