@@ -120,7 +120,7 @@ Esses caras se preocupam. Eles se preocupam como artistas. E o mesmo não pode s
 
 Absolutamente nada. É aí que está a minha questão.
 
-O que trás qualidade é algo muito maior que uma coleção de técnicas de engenharia de software ou um punhado de práticas.
+O que traz qualidade é algo muito maior que uma coleção de técnicas de engenharia de software ou um punhado de práticas.
 
 Quando eu entrei nessa comunidade eu estava com a falsa premissa de que se alguém não escrevesse código como eu escrevo, essa pessoa deveria estar fazendo errado.
 
